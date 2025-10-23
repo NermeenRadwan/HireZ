@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build CV - HireZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="dashboard.html">
+                <i class="fas fa-users me-2"></i>HireZ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-upload.html">
+                            <i class="fas fa-upload me-1"></i>Upload CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cv-builder.html">
+                            <i class="fas fa-edit me-1"></i>Build CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ats-matcher.html">
+                            <i class="fas fa-search me-1"></i>ATS Matcher
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interview-prep.html">
+                            <i class="fas fa-question-circle me-1"></i>Interview Prep
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommendations.html">
+                            <i class="fas fa-star me-1"></i>Recommendations
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="feedback.html"><i class="fas fa-comments me-2"></i>Feedback</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid" style="margin-top: 76px;">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="sidebar-content">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv-upload.html">
+                                <i class="fas fa-upload me-2"></i>Upload CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="cv-builder.html">
+                                <i class="fas fa-edit me-2"></i>Build CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ats-matcher.html">
+                                <i class="fas fa-search me-2"></i>ATS Matcher
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="interview-prep.html">
+                                <i class="fas fa-question-circle me-2"></i>Interview Prep
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recommendations.html">
+                                <i class="fas fa-star me-2"></i>Recommendations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <div class="container-fluid py-4">
+                    <!-- Page Header -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="h3 mb-1">Build Your CV</h1>
+                            <p class="text-muted">Create a professional CV with our step-by-step builder.</p>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-primary me-2" onclick="previewCV()">
+                                <i class="fas fa-eye me-2"></i>Preview
+                            </button>
+                            <button class="btn btn-primary" onclick="saveCV()">
+                                <i class="fas fa-save me-2"></i>Save CV
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CV Builder Form -->
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <form id="cvBuilderForm">
+                                <!-- Personal Information -->
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h5 class="card-title mb-0">
+                                            <i class="fas fa-user me-2"></i>Personal Information
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label">First Name *</label>
+                                                <input type="text" class="form-control" id="firstName" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lastName" class="form-label">Last Name *</label>
+                                                <input type="text" class="form-control" id="lastName" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="email" class="form-label">Email *</label>
+                                                <input type="email" class="form-control" id="email" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="phone" class="form-label">Phone *</label>
+                                                <input type="tel" class="form-control" id="phone" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="location" class="form-label">Location</label>
+                                                <input type="text" class="form-control" id="location" placeholder="City, Country">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="linkedin" class="form-label">LinkedIn Profile</label>
+                                                <input type="url" class="form-control" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="summary" class="form-label">Professional Summary</label>
+                                            <textarea class="form-control" id="summary" rows="4" placeholder="Brief overview of your professional background and key strengths"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Work Experience -->
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">
+                                            <i class="fas fa-briefcase me-2"></i>Work Experience
+                                        </h5>
+                                        <button type="button" class="btn btn-sm btn-primary" onclick="addExperience()">
+                                            <i class="fas fa-plus me-1"></i>Add Experience
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="experienceContainer">
+                                            <div class="experience-item border rounded p-3 mb-3">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Job Title *</label>
+                                                        <input type="text" class="form-control" name="jobTitle" required>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Company *</label>
+                                                        <input type="text" class="form-control" name="company" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Start Date *</label>
+                                                        <input type="month" class="form-control" name="startDate" required>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">End Date</label>
+                                                        <input type="month" class="form-control" name="endDate">
+                                                        <div class="form-check mt-2">
+                                                            <input class="form-check-input" type="checkbox" name="currentJob" onchange="toggleEndDate(this)">
+                                                            <label class="form-check-label">Currently working here</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Description</label>
+                                                    <textarea class="form-control" name="description" rows="3" placeholder="Describe your key responsibilities and achievements"></textarea>
+                                                </div>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeExperience(this)">
+                                                    <i class="fas fa-trash me-1"></i>Remove
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Education -->
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">
+                                            <i class="fas fa-graduation-cap me-2"></i>Education
+                                        </h5>
+                                        <button type="button" class="btn btn-sm btn-primary" onclick="addEducation()">
+                                            <i class="fas fa-plus me-1"></i>Add Education
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="educationContainer">
+                                            <div class="education-item border rounded p-3 mb-3">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Degree *</label>
+                                                        <input type="text" class="form-control" name="degree" required>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Institution *</label>
+                                                        <input type="text" class="form-control" name="institution" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Start Date</label>
+                                                        <input type="month" class="form-control" name="eduStartDate">
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">End Date</label>
+                                                        <input type="month" class="form-control" name="eduEndDate">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Description</label>
+                                                    <textarea class="form-control" name="eduDescription" rows="2" placeholder="Relevant coursework, honors, or achievements"></textarea>
+                                                </div>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeEducation(this)">
+                                                    <i class="fas fa-trash me-1"></i>Remove
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Skills -->
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h5 class="card-title mb-0">
+                                            <i class="fas fa-cogs me-2"></i>Skills
+                                        </h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Technical Skills</label>
+                                            <input type="text" class="form-control" id="technicalSkills" placeholder="JavaScript, Python, React, Node.js (comma separated)">
+                                            <small class="form-text text-muted">Separate skills with commas</small>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Soft Skills</label>
+                                            <input type="text" class="form-control" id="softSkills" placeholder="Leadership, Communication, Problem Solving (comma separated)">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Languages</label>
+                                            <input type="text" class="form-control" id="languages" placeholder="English (Native), Spanish (Fluent), French (Intermediate)">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Certifications -->
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">
+                                            <i class="fas fa-certificate me-2"></i>Certifications
+                                        </h5>
+                                        <button type="button" class="btn btn-sm btn-primary" onclick="addCertification()">
+                                            <i class="fas fa-plus me-1"></i>Add Certification
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="certificationContainer">
+                                            <div class="certification-item border rounded p-3 mb-3">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Certification Name *</label>
+                                                        <input type="text" class="form-control" name="certName" required>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Issuing Organization</label>
+                                                        <input type="text" class="form-control" name="certOrg">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Issue Date</label>
+                                                        <input type="month" class="form-control" name="certDate">
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Expiry Date</label>
+                                                        <input type="month" class="form-control" name="certExpiry">
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeCertification(this)">
+                                                    <i class="fas fa-trash me-1"></i>Remove
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <!-- CV Preview -->
+                            <div class="card sticky-top">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-eye me-2"></i>CV Preview
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="cv-preview" id="cvPreview">
+                                        <div class="cv-header text-center mb-4">
+                                            <h3 id="previewName">Your Name</h3>
+                                            <p id="previewContact">Email | Phone | Location</p>
+                                        </div>
+                                        <div class="cv-section">
+                                            <h5 class="cv-section-title">Professional Summary</h5>
+                                            <p id="previewSummary" class="text-muted">Add your professional summary...</p>
+                                        </div>
+                                        <div class="cv-section">
+                                            <h5 class="cv-section-title">Work Experience</h5>
+                                            <div id="previewExperience">
+                                                <p class="text-muted">Add your work experience...</p>
+                                            </div>
+                                        </div>
+                                        <div class="cv-section">
+                                            <h5 class="cv-section-title">Education</h5>
+                                            <div id="previewEducation">
+                                                <p class="text-muted">Add your education...</p>
+                                            </div>
+                                        </div>
+                                        <div class="cv-section">
+                                            <h5 class="cv-section-title">Skills</h5>
+                                            <div id="previewSkills">
+                                                <p class="text-muted">Add your skills...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tips -->
+                            <div class="card mt-4">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-lightbulb me-2"></i>CV Tips
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Keep it concise</strong><br>
+                                            <small class="text-muted">Aim for 1-2 pages maximum</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Use action verbs</strong><br>
+                                            <small class="text-muted">Led, Developed, Implemented, etc.</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Quantify achievements</strong><br>
+                                            <small class="text-muted">Include numbers and metrics</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Tailor to job</strong><br>
+                                            <small class="text-muted">Highlight relevant experience</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // CV Builder functionality
+        function addExperience() {
+            const container = document.getElementById('experienceContainer');
+            const newExperience = document.createElement('div');
+            newExperience.className = 'experience-item border rounded p-3 mb-3';
+            newExperience.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Job Title *</label>
+                        <input type="text" class="form-control" name="jobTitle" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Company *</label>
+                        <input type="text" class="form-control" name="company" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Start Date *</label>
+                        <input type="month" class="form-control" name="startDate" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">End Date</label>
+                        <input type="month" class="form-control" name="endDate">
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" name="currentJob" onchange="toggleEndDate(this)">
+                            <label class="form-check-label">Currently working here</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" name="description" rows="3" placeholder="Describe your key responsibilities and achievements"></textarea>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeExperience(this)">
+                    <i class="fas fa-trash me-1"></i>Remove
+                </button>
+            `;
+            container.appendChild(newExperience);
+        }
+
+        function removeExperience(button) {
+            button.closest('.experience-item').remove();
+            updatePreview();
+        }
+
+        function addEducation() {
+            const container = document.getElementById('educationContainer');
+            const newEducation = document.createElement('div');
+            newEducation.className = 'education-item border rounded p-3 mb-3';
+            newEducation.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Degree *</label>
+                        <input type="text" class="form-control" name="degree" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Institution *</label>
+                        <input type="text" class="form-control" name="institution" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Start Date</label>
+                        <input type="month" class="form-control" name="eduStartDate">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">End Date</label>
+                        <input type="month" class="form-control" name="eduEndDate">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" name="eduDescription" rows="2" placeholder="Relevant coursework, honors, or achievements"></textarea>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeEducation(this)">
+                    <i class="fas fa-trash me-1"></i>Remove
+                </button>
+            `;
+            container.appendChild(newEducation);
+        }
+
+        function removeEducation(button) {
+            button.closest('.education-item').remove();
+            updatePreview();
+        }
+
+        function addCertification() {
+            const container = document.getElementById('certificationContainer');
+            const newCert = document.createElement('div');
+            newCert.className = 'certification-item border rounded p-3 mb-3';
+            newCert.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Certification Name *</label>
+                        <input type="text" class="form-control" name="certName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Issuing Organization</label>
+                        <input type="text" class="form-control" name="certOrg">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Issue Date</label>
+                        <input type="month" class="form-control" name="certDate">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Expiry Date</label>
+                        <input type="month" class="form-control" name="certExpiry">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeCertification(this)">
+                    <i class="fas fa-trash me-1"></i>Remove
+                </button>
+            `;
+            container.appendChild(newCert);
+        }
+
+        function removeCertification(button) {
+            button.closest('.certification-item').remove();
+        }
+
+        function toggleEndDate(checkbox) {
+            const endDateInput = checkbox.closest('.row').querySelector('input[name="endDate"]');
+            endDateInput.disabled = checkbox.checked;
+            if (checkbox.checked) {
+                endDateInput.value = '';
+            }
+        }
+
+        function updatePreview() {
+            // Update name and contact
+            const firstName = document.getElementById('firstName').value || 'Your';
+            const lastName = document.getElementById('lastName').value || 'Name';
+            const email = document.getElementById('email').value || 'email@example.com';
+            const phone = document.getElementById('phone').value || 'Phone';
+            const location = document.getElementById('location').value || 'Location';
+            
+            document.getElementById('previewName').textContent = `${firstName} ${lastName}`;
+            document.getElementById('previewContact').textContent = `${email} | ${phone} | ${location}`;
+            
+            // Update summary
+            const summary = document.getElementById('summary').value || 'Add your professional summary...';
+            document.getElementById('previewSummary').textContent = summary;
+            
+            // Update experience
+            const experienceContainer = document.getElementById('previewExperience');
+            const experiences = document.querySelectorAll('.experience-item');
+            if (experiences.length > 0) {
+                let experienceHTML = '';
+                experiences.forEach(exp => {
+                    const title = exp.querySelector('input[name="jobTitle"]').value;
+                    const company = exp.querySelector('input[name="company"]').value;
+                    const startDate = exp.querySelector('input[name="startDate"]').value;
+                    const endDate = exp.querySelector('input[name="endDate"]').value;
+                    const current = exp.querySelector('input[name="currentJob"]').checked;
+                    const description = exp.querySelector('textarea[name="description"]').value;
+                    
+                    if (title && company) {
+                        experienceHTML += `
+                            <div class="mb-3">
+                                <h6 class="mb-1">${title} at ${company}</h6>
+                                <small class="text-muted">${startDate} - ${current ? 'Present' : endDate}</small>
+                                ${description ? `<p class="mt-2 mb-0">${description}</p>` : ''}
+                            </div>
+                        `;
+                    }
+                });
+                experienceContainer.innerHTML = experienceHTML || '<p class="text-muted">Add your work experience...</p>';
+            }
+            
+            // Update education
+            const educationContainer = document.getElementById('previewEducation');
+            const educations = document.querySelectorAll('.education-item');
+            if (educations.length > 0) {
+                let educationHTML = '';
+                educations.forEach(edu => {
+                    const degree = edu.querySelector('input[name="degree"]').value;
+                    const institution = edu.querySelector('input[name="institution"]').value;
+                    const startDate = edu.querySelector('input[name="eduStartDate"]').value;
+                    const endDate = edu.querySelector('input[name="eduEndDate"]').value;
+                    const description = edu.querySelector('textarea[name="eduDescription"]').value;
+                    
+                    if (degree && institution) {
+                        educationHTML += `
+                            <div class="mb-3">
+                                <h6 class="mb-1">${degree} from ${institution}</h6>
+                                ${startDate || endDate ? `<small class="text-muted">${startDate} - ${endDate}</small>` : ''}
+                                ${description ? `<p class="mt-2 mb-0">${description}</p>` : ''}
+                            </div>
+                        `;
+                    }
+                });
+                educationContainer.innerHTML = educationHTML || '<p class="text-muted">Add your education...</p>';
+            }
+            
+            // Update skills
+            const technicalSkills = document.getElementById('technicalSkills').value;
+            const softSkills = document.getElementById('softSkills').value;
+            const languages = document.getElementById('languages').value;
+            
+            let skillsHTML = '';
+            if (technicalSkills) {
+                skillsHTML += `<p><strong>Technical Skills:</strong> ${technicalSkills}</p>`;
+            }
+            if (softSkills) {
+                skillsHTML += `<p><strong>Soft Skills:</strong> ${softSkills}</p>`;
+            }
+            if (languages) {
+                skillsHTML += `<p><strong>Languages:</strong> ${languages}</p>`;
+            }
+            
+            document.getElementById('previewSkills').innerHTML = skillsHTML || '<p class="text-muted">Add your skills...</p>';
+        }
+
+        function previewCV() {
+            // Open preview in new window
+            const previewWindow = window.open('', '_blank', 'width=800,height=1000');
+            const cvContent = document.getElementById('cvPreview').innerHTML;
+            previewWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>CV Preview</title>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                    <style>
+                        body { font-family: Arial, sans-serif; }
+                        .cv-section-title { border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-top: 20px; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container mt-4">
+                        ${cvContent}
+                    </div>
+                </body>
+                </html>
+            `);
+        }
+
+        function saveCV() {
+            // Collect all form data
+            const formData = new FormData(document.getElementById('cvBuilderForm'));
+            const cvData = {};
+            
+            // Basic info
+            cvData.personal = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                location: document.getElementById('location').value,
+                linkedin: document.getElementById('linkedin').value,
+                summary: document.getElementById('summary').value
+            };
+            
+            // Experience
+            cvData.experience = [];
+            document.querySelectorAll('.experience-item').forEach(exp => {
+                cvData.experience.push({
+                    jobTitle: exp.querySelector('input[name="jobTitle"]').value,
+                    company: exp.querySelector('input[name="company"]').value,
+                    startDate: exp.querySelector('input[name="startDate"]').value,
+                    endDate: exp.querySelector('input[name="endDate"]').value,
+                    current: exp.querySelector('input[name="currentJob"]').checked,
+                    description: exp.querySelector('textarea[name="description"]').value
+                });
+            });
+            
+            // Education
+            cvData.education = [];
+            document.querySelectorAll('.education-item').forEach(edu => {
+                cvData.education.push({
+                    degree: edu.querySelector('input[name="degree"]').value,
+                    institution: edu.querySelector('input[name="institution"]').value,
+                    startDate: edu.querySelector('input[name="eduStartDate"]').value,
+                    endDate: edu.querySelector('input[name="eduEndDate"]').value,
+                    description: edu.querySelector('textarea[name="eduDescription"]').value
+                });
+            });
+            
+            // Skills
+            cvData.skills = {
+                technical: document.getElementById('technicalSkills').value,
+                soft: document.getElementById('softSkills').value,
+                languages: document.getElementById('languages').value
+            };
+            
+            // Save to localStorage (in real app, this would be sent to server)
+            localStorage.setItem('cvData', JSON.stringify(cvData));
+            
+            alert('CV saved successfully! You can now proceed to ATS matching.');
+            window.location.href = 'ats-matcher.html';
+        }
+
+        // Add event listeners for real-time preview updates
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', updatePreview);
+            });
+        });
+    </script>
+</body>
+</html>

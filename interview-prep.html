@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Preparation - HireZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="dashboard.html">
+                <i class="fas fa-users me-2"></i>HireZ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-upload.html">
+                            <i class="fas fa-upload me-1"></i>Upload CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-builder.html">
+                            <i class="fas fa-edit me-1"></i>Build CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ats-matcher.html">
+                            <i class="fas fa-search me-1"></i>ATS Matcher
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interview-prep.html">
+                            <i class="fas fa-question-circle me-1"></i>Interview Prep
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommendations.html">
+                            <i class="fas fa-star me-1"></i>Recommendations
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="feedback.html"><i class="fas fa-comments me-2"></i>Feedback</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid" style="margin-top: 76px;">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="sidebar-content">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="dashboard.html">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv-upload.html">
+                                <i class="fas fa-upload me-2"></i>Upload CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv-builder.html">
+                                <i class="fas fa-edit me-2"></i>Build CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ats-matcher.html">
+                                <i class="fas fa-search me-2"></i>ATS Matcher
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="interview-prep.html">
+                                <i class="fas fa-question-circle me-2"></i>Interview Prep
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recommendations.html">
+                                <i class="fas fa-star me-2"></i>Recommendations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function generateQuestions() {
+            const jobTitle = document.getElementById('interviewJobTitle').value;
+            const company = document.getElementById('interviewCompany').value;
+            const level = document.getElementById('interviewLevel').value;
+            
+            if (!jobTitle) {
+                alert('Please enter a job title.');
+                return;
+            }
+            
+            // Show questions section
+            document.getElementById('questionsSection').classList.remove('d-none');
+            
+            // Show system design questions if selected
+            const systemDesignChecked = document.getElementById('systemDesign').checked;
+            if (systemDesignChecked) {
+                document.getElementById('systemDesignQuestions').classList.remove('d-none');
+            }
+            
+            // Scroll to questions
+            document.getElementById('questionsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showAnswer(button) {
+            const answerContent = button.closest('.question-item').querySelector('.answer-content');
+            const isVisible = !answerContent.classList.contains('d-none');
+            
+            if (isVisible) {
+                answerContent.classList.add('d-none');
+                button.innerHTML = '<i class="fas fa-eye me-1"></i>Show Answer';
+            } else {
+                answerContent.classList.remove('d-none');
+                button.innerHTML = '<i class="fas fa-eye-slash me-1"></i>Hide Answer';
+            }
+        }
+
+        function markAsPracticed(button) {
+            const questionItem = button.closest('.question-item');
+            questionItem.classList.add('practiced');
+            button.innerHTML = '<i class="fas fa-check me-1"></i>Practiced';
+            button.classList.remove('btn-outline-success');
+            button.classList.add('btn-success');
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const totalQuestions = document.querySelectorAll('.question-item').length;
+            const practicedQuestions = document.querySelectorAll('.question-item.practiced').length;
+            const progressPercentage = Math.round((practicedQuestions / totalQuestions) * 100);
+            
+            // Update progress bars
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                bar.style.width = progressPercentage + '%';
+            });
+            
+            // Update badges
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach(badge => {
+                if (badge.textContent.includes('/')) {
+                    badge.textContent = practicedQuestions + '/' + totalQuestions;
+                } else if (badge.textContent.includes('%')) {
+                    badge.textContent = progressPercentage + '%';
+                }
+            });
+        }
+
+        function regenerateQuestions() {
+            alert('Generating new set of interview questions...');
+            // In a real application, this would call an API to generate new questions
+        }
+
+        function startPractice() {
+            alert('Starting practice mode... This would open a mock interview session.');
+            // In a real application, this would start an interactive practice session
+        }
+
+        // Auto-save form data
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    localStorage.setItem('interview_' + this.id, this.value);
+                });
+                
+                // Load saved data
+                const savedValue = localStorage.getItem('interview_' + input.id);
+                if (savedValue) {
+                    input.value = savedValue;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
