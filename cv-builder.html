@@ -417,9 +417,38 @@
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                <!-- Toast message will be inserted here -->
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script>
+        // Toast notification function
+        function showToast(message) {
+            const toastElement = document.getElementById('successToast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            
+            const toast = new bootstrap.Toast(toastElement, {
+                autohide: true,
+                delay: 3000
+            });
+            
+            toast.show();
+        }
+
         // CV Builder functionality
         function addExperience() {
             const container = document.getElementById('experienceContainer');
@@ -460,6 +489,7 @@
             `;
             container.appendChild(newExperience);
             updatePreview();
+            showToast('New work experience entry added successfully!');
         }
 
         function removeExperience(button) {
@@ -502,6 +532,7 @@
             `;
             container.appendChild(newEducation);
             updatePreview();
+            showToast('New education entry added successfully!');
         }
 
         function removeEducation(button) {
@@ -540,6 +571,7 @@
             `;
             container.appendChild(newCert);
             updatePreview();
+            showToast('New certification entry added successfully!');
         }
 
         function removeCertification(button) {
