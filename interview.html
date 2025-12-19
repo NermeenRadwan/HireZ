@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interviews - HireZ</title>
+
+  <!-- ✅ Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    #calendarContainer {
+      display: none;
+      transition: 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <!-- ✅ Top Action Buttons -->
+  <div class="text-end m-4">
+    <button class="btn btn-primary btn-lg me-2" data-bs-toggle="modal" data-bs-target="#scheduleModal">
+      <i class="fas fa-calendar-plus me-2"></i> Schedule New Interview
+    </button>
+
+    <button class="btn btn-outline-primary btn-lg" id="viewCalendarBtn" type="button">
+      <i class="fas fa-calendar-alt me-2"></i> View Calendar
+    </button>
+  </div>
+
+  <!-- ✅ Calendar Section -->
+  <div id="calendarContainer" class="container bg-white border rounded shadow-sm p-4">
+    <h4 class="text-primary mb-3">
+      <i class="fas fa-calendar-day me-2"></i> Interview Calendar
+    </h4>
+    <p class="text-muted">📅 Calendar placeholder — you can integrate FullCalendar or any library later.</p>
+  </div>
+
+  <!-- ✅ Schedule Interview Modal -->
+  <div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fas fa-calendar-plus me-2"></i> Schedule New Interview
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <form id="scheduleForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Candidate Name *</label>
+                <input type="text" class="form-control" id="candidateName" required />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Position *</label>
+                <input type="text" class="form-control" id="position" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Interviewer *</label>
+                <select class="form-select" id="interviewer" required>
+                  <option value="">Select Interviewer</option>
+                  <option>Alex Smith</option>
+                  <option>Lisa Wang</option>
+                  <option>John Doe</option>
+                  <option>Sarah Johnson</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Interview Type *</label>
+                <select class="form-select" id="interviewType" required>
+                  <option value="">Select Type</option>
+                  <option>Technical</option>
+                  <option>Behavioral</option>
+                  <option>HR</option>
+                  <option>Final</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- Date -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Date *</label>
+                <div class="input-group">
+                  <input type="date" class="form-control" id="interviewDate" required />
+                  <button class="btn btn-outline-secondary" type="button" id="openDateBtn">
+                    <i class="fas fa-calendar-alt"></i>
+                  </button>
+                </div>
+                <div class="mt-2">
+                  <button type="button" class="btn btn-sm btn-outline-primary me-2" id="todayBtn">Today</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary me-2" id="tomorrowBtn">Tomorrow</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary" id="nextWeekBtn">Next Week</button>
+                </div>
+              </div>
+
+              <!-- Time -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Time *</label>
+                <div class="input-group">
+                  <input type="time" class="form-control" id="interviewTime" required />
+                  <button class="btn btn-outline-secondary" type="button" id="openTimeBtn">
+                    <i class="fas fa-clock"></i>
+                  </button>
+                </div>
+                <div class="mt-2">
+                  <button type="button" class="btn btn-sm btn-outline-primary me-2" id="nextHourBtn">Next Hour</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary me-2" data-hour="9">9:00 AM</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary me-2" data-hour="14">2:00 PM</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary" data-hour="16">4:00 PM</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Notes</label>
+              <textarea class="form-control" rows="3" placeholder="Additional notes..."></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Meeting Link</label>
+              <input type="url" class="form-control" placeholder="https://meet.google.com/..." />
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="saveBtn">
+            <i class="fas fa-save me-2"></i> Schedule Interview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ✅ Toggle Calendar
+    const viewCalendarBtn = document.getElementById("viewCalendarBtn");
+    const calendarContainer = document.getElementById("calendarContainer");
+    viewCalendarBtn.addEventListener("click", () => {
+      const visible = calendarContainer.style.display === "block";
+      calendarContainer.style.display = visible ? "none" : "block";
+      viewCalendarBtn.innerHTML = visible
+        ? '<i class="fas fa-calendar-alt me-2"></i> View Calendar'
+        : '<i class="fas fa-eye-slash me-2"></i> Hide Calendar';
+    });
+
+    // ✅ Date Picker Helpers
+    document.getElementById("openDateBtn").addEventListener("click", () => {
+      const input = document.getElementById("interviewDate");
+      input.focus();
+      if (typeof input.showPicker === "function") input.showPicker();
+      else input.click();
+    });
+
+    document.getElementById("todayBtn").addEventListener("click", () => {
+      document.getElementById("interviewDate").value = new Date()
+        .toISOString()
+        .split("T")[0];
+    });
+
+    document.getElementById("tomorrowBtn").addEventListener("click", () => {
+      const d = new Date();
+      d.setDate(d.getDate() + 1);
+      document.getElementById("interviewDate").value = d
+        .toISOString()
+        .split("T")[0];
+    });
+
+    document.getElementById("nextWeekBtn").addEventListener("click", () => {
+      const d = new Date();
+      d.setDate(d.getDate() + 7);
+      document.getElementById("interviewDate").value = d
+        .toISOString()
+        .split("T")[0];
+    });
+
+    // ✅ Time Picker
+    document.getElementById("openTimeBtn").addEventListener("click", () => {
+      const input = document.getElementById("interviewTime");
+      input.focus();
+      if (typeof input.showPicker === "function") input.showPicker();
+      else input.click();
+    });
+
+    document.getElementById("nextHourBtn").addEventListener("click", () => {
+      const now = new Date();
+      now.setHours(now.getHours() + 1);
+      document.getElementById("interviewTime").value = now
+        .toTimeString()
+        .slice(0, 5);
+    });
+
+    document.querySelectorAll("[data-hour]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const hour = btn.getAttribute("data-hour").padStart(2, "0");
+        document.getElementById("interviewTime").value = `${hour}:00`;
+      });
+    });
+
+    // ✅ Save Interview
+    document.getElementById("saveBtn").addEventListener("click", () => {
+      alert("✅ Interview scheduled successfully!");
+      document.getElementById("scheduleForm").reset();
+      const modal = bootstrap.Modal.getInstance(
+        document.getElementById("scheduleModal")
+      );
+      modal.hide();
+    });
+  </script>
+</body>
+</html>
