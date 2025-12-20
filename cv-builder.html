@@ -7,6 +7,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* CV Builder specific styles */
+        .cv-preview-card {
+            z-index: 10;
+        }
+        
+        .cv-tips-card {
+            z-index: 8;
+            margin-top: 1rem;
+            top: 100px !important;
+        }
+        
+        /* Ensure proper spacing between sticky elements */
+        .sticky-top {
+            top: 100px !important;
+        }
+        
+        /* Sidebar with tips card */
+        .sidebar {
+            position: relative;
+        }
+        
+        /* Add some padding to prevent overlap */
+        .col-lg-4 {
+            padding-bottom: 2rem;
+        }
+        
+        /* Ensure tips card doesn't interfere with sidebar */
+        .sidebar .cv-tips-card {
+            margin-top: 1rem;
+            position: sticky;
+            top: 100px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -106,6 +140,39 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+                
+                <!-- CV Tips Card -->
+                <div class="card cv-tips-card sticky-top">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-lightbulb me-2"></i>CV Tips
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Keep it concise</strong><br>
+                                <small class="text-muted">Aim for 1-2 pages maximum</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Use action verbs</strong><br>
+                                <small class="text-muted">Led, Developed, Implemented, etc.</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Quantify achievements</strong><br>
+                                <small class="text-muted">Include numbers and metrics</small>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Tailor to job</strong><br>
+                                <small class="text-muted">Highlight relevant experience</small>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -340,7 +407,7 @@
 
                         <div class="col-lg-4">
                             <!-- CV Preview -->
-                            <div class="card sticky-top">
+                            <div class="card sticky-top cv-preview-card">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">
                                         <i class="fas fa-eye me-2"></i>CV Preview
@@ -378,38 +445,6 @@
                                 </div>
                             </div>
 
-                            <!-- Tips -->
-                            <div class="card mt-4">
-                                <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                        <i class="fas fa-lightbulb me-2"></i>CV Tips
-                                    </h5>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success me-2"></i>
-                                            <strong>Keep it concise</strong><br>
-                                            <small class="text-muted">Aim for 1-2 pages maximum</small>
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success me-2"></i>
-                                            <strong>Use action verbs</strong><br>
-                                            <small class="text-muted">Led, Developed, Implemented, etc.</small>
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success me-2"></i>
-                                            <strong>Quantify achievements</strong><br>
-                                            <small class="text-muted">Include numbers and metrics</small>
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success me-2"></i>
-                                            <strong>Tailor to job</strong><br>
-                                            <small class="text-muted">Highlight relevant experience</small>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -417,9 +452,38 @@
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                <!-- Toast message will be inserted here -->
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script>
+        // Toast notification function
+        function showToast(message) {
+            const toastElement = document.getElementById('successToast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            
+            const toast = new bootstrap.Toast(toastElement, {
+                autohide: true,
+                delay: 3000
+            });
+            
+            toast.show();
+        }
+
         // CV Builder functionality
         function addExperience() {
             const container = document.getElementById('experienceContainer');
@@ -459,11 +523,14 @@
                 </button>
             `;
             container.appendChild(newExperience);
+            updatePreview();
+            showToast('New work experience entry added successfully!');
         }
 
         function removeExperience(button) {
             button.closest('.experience-item').remove();
             updatePreview();
+            showToast('Work experience entry removed successfully!');
         }
 
         function addEducation() {
@@ -500,11 +567,14 @@
                 </button>
             `;
             container.appendChild(newEducation);
+            updatePreview();
+            showToast('New education entry added successfully!');
         }
 
         function removeEducation(button) {
             button.closest('.education-item').remove();
             updatePreview();
+            showToast('Education entry removed successfully!');
         }
 
         function addCertification() {
@@ -537,10 +607,14 @@
                 </button>
             `;
             container.appendChild(newCert);
+            updatePreview();
+            showToast('New certification entry added successfully!');
         }
 
         function removeCertification(button) {
             button.closest('.certification-item').remove();
+            updatePreview();
+            showToast('Certification entry removed successfully!');
         }
 
         function toggleEndDate(checkbox) {
@@ -715,11 +789,20 @@
             window.location.href = 'ats-matcher.html';
         }
 
-        // Add event listeners for real-time preview updates
+        // Add event listeners for real-time preview updates using event delegation
         document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('input, textarea');
-            inputs.forEach(input => {
-                input.addEventListener('input', updatePreview);
+            // Use event delegation to handle all input changes
+            document.addEventListener('input', function(e) {
+                if (e.target.matches('input, textarea')) {
+                    updatePreview();
+                }
+            });
+            
+            // Also handle change events for select elements
+            document.addEventListener('change', function(e) {
+                if (e.target.matches('input, textarea, select')) {
+                    updatePreview();
+                }
             });
         });
     </script>
