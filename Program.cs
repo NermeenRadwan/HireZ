@@ -106,33 +106,18 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddAuthorization();
-
-// ---------- OpenAI typed HttpClient & IAiService registration ----------
-// Reads key from OpenAI:ApiKey in config or OPENAI_API_KEY environment variable
-var openAiKey = builder.Configuration.GetValue<string>("OpenAI:ApiKey")
-    ?? Environment.GetEnvironmentVariable("OPENAI_API_KEY");
-
-// Register OpenAiService as the IAiService using a typed HttpClient
-builder.Services.AddHttpClient<IAiService, OpenAiService>(client =>
+// ---------- AI (Gemini) ----------
+builder.Services.AddHttpClient<IAiService, GeminiService>(client =>
 {
-    client.BaseAddress = new Uri("https://api.openai.com");
-    if (!string.IsNullOrWhiteSpace(openAiKey))
-    {
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiKey);
-    }
-    client.DefaultRequestHeaders.UserAgent.ParseAdd("HireZ/1.0");
-    client.DefaultRequestHeaders.Accept.ParseAdd("application/json");
-}).SetHandlerLifetime(TimeSpan.FromMinutes(10));
+    client.Timeout = TimeSpan.FromSeconds(60);
+    client.DefaultRequestHeaders.Accept.Add(
+        new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+});
+
+builder.Services.AddAuthorization();
 
 // ---------- Build app ----------
 var app = builder.Build();
-
-// Log OpenAI key warning now that logger is available
-if (string.IsNullOrWhiteSpace(openAiKey))
-{
-    app.Logger.LogWarning("OpenAI API key not found in configuration or environment. OpenAiService requests will fail until a key is provided.");
-}
 
 // ---------- Apply migrations and seed DB (development friendly) ----------
 using (var scope = app.Services.CreateScope())
