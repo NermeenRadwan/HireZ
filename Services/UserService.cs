@@ -24,7 +24,6 @@ namespace HireZ.Services
 
         public async Task<(bool Success, string? Error)> RegisterAsync(RegisterRequest request)
         {
-            // basic validation
             if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
                 return (false, "Email and password are required.");
 
@@ -63,11 +62,19 @@ namespace HireZ.Services
 
         private AuthResponse GenerateJwtToken(User user)
         {
+            // Get jwt settings
             var jwtSettings = _config.GetSection("Jwt");
             var key = jwtSettings.GetValue<string>("Key");
-            var issuer = jwtSettings.GetValue<string>("Issuer");
-            var audience = jwtSettings.GetValue<string>("Audience");
-            var expiryMinutes = jwtSettings.GetValue<int>("ExpiryMinutes", 1440);
+
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                // Fail fast — Program.cs already enforces this, but guard here for safety
+                throw new InvalidOperationException("JWT key is not configured. Set Jwt:Key in configuration.");
+            }
+
+            var issuer = jwtSettings.GetValue<string>("Issuer") ?? "HireZApi";
+            var audience = jwtSettings.GetValue<string>("Audience") ?? "HireZClients";
+            var expiryMinutes = jwtSettings.GetValue<int?>("ExpiryMinutes") ?? 1440;
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var keyBytes = Encoding.UTF8.GetBytes(key);

@@ -1,5 +1,6 @@
-// Program.cs
+using System;
 using System.Text;
+using System.Net.Http.Headers;
 using HireZ.Data;
 using HireZ.Services;
 using HireZ.Services.Background;
@@ -55,6 +56,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // ---------- Application services ----------
 builder.Services.AddScoped<IUserService, UserService>();
 
+// File storage, extraction, resume services & background queue/worker
+builder.Services.AddSingleton<IFileStorageService, FileStorageService>();
+builder.Services.AddSingleton<ITextExtractionService, PdfTextExtractionService>();
+builder.Services.AddSingleton<ResumeAnalysisQueue>();
+builder.Services.AddHostedService<ResumeAnalysisWorker>();
+builder.Services.AddScoped<IResumeService, ResumeService>();
+
 // ---------- JWT configuration ----------
 var jwtSection = builder.Configuration.GetSection("Jwt");
 // allow overriding secret with environment variable "JWT__Key" or "HIREZ_JWT_KEY"
@@ -100,7 +108,31 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
+// ---------- OpenAI typed HttpClient & IAiService registration ----------
+// Reads key from OpenAI:ApiKey in config or OPENAI_API_KEY environment variable
+var openAiKey = builder.Configuration.GetValue<string>("OpenAI:ApiKey")
+    ?? Environment.GetEnvironmentVariable("OPENAI_API_KEY");
+
+// Register OpenAiService as the IAiService using a typed HttpClient
+builder.Services.AddHttpClient<IAiService, OpenAiService>(client =>
+{
+    client.BaseAddress = new Uri("https://api.openai.com");
+    if (!string.IsNullOrWhiteSpace(openAiKey))
+    {
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiKey);
+    }
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("HireZ/1.0");
+    client.DefaultRequestHeaders.Accept.ParseAdd("application/json");
+}).SetHandlerLifetime(TimeSpan.FromMinutes(10));
+
+// ---------- Build app ----------
 var app = builder.Build();
+
+// Log OpenAI key warning now that logger is available
+if (string.IsNullOrWhiteSpace(openAiKey))
+{
+    app.Logger.LogWarning("OpenAI API key not found in configuration or environment. OpenAiService requests will fail until a key is provided.");
+}
 
 // ---------- Apply migrations and seed DB (development friendly) ----------
 using (var scope = app.Services.CreateScope())
@@ -123,13 +155,6 @@ using (var scope = app.Services.CreateScope())
         throw;
     }
 }
-
-builder.Services.AddSingleton<IFileStorageService, FileStorageService>();
-builder.Services.AddSingleton<ITextExtractionService, PdfTextExtractionService>();
-builder.Services.AddSingleton<ResumeAnalysisQueue>();
-builder.Services.AddHostedService<ResumeAnalysisWorker>();
-builder.Services.AddScoped<IAiService, OpenAiServiceStub>();
-builder.Services.AddScoped<IResumeService, ResumeService>();
 
 // ---------- Middleware pipeline ----------
 if (app.Environment.IsDevelopment())
