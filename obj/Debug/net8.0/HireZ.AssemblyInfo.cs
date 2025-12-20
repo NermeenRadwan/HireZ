@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HireZ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fc8742902d30d2235cc6572f3cf02011bfbea3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+407e5243769c7be86c0510bda55bc6244a2fa546")]
 [assembly: System.Reflection.AssemblyProductAttribute("HireZ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HireZ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
