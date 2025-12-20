@@ -117,6 +117,9 @@ namespace HireZ.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UploadedAt")
                         .HasColumnType("datetime2");
 
@@ -149,6 +152,9 @@ namespace HireZ.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ResumeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
