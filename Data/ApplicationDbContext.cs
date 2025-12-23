@@ -17,6 +17,8 @@ namespace HireZ.Data
         public DbSet<MatchedKeyword> MatchedKeywords { get; set; } = null!;
         public DbSet<InterviewSession> InterviewSessions { get; set; } = null!;
         public DbSet<Analytics> Analytics { get; set; } = null!;
+        public DbSet<Job> Jobs { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

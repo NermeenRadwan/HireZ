@@ -62,6 +62,9 @@ builder.Services.AddSingleton<ITextExtractionService, PdfTextExtractionService>(
 builder.Services.AddSingleton<ResumeAnalysisQueue>();
 builder.Services.AddHostedService<ResumeAnalysisWorker>();
 builder.Services.AddScoped<IResumeService, ResumeService>();
+builder.Services.AddScoped<IJobService, JobService>();
+builder.Services.AddScoped<IInterviewService, InterviewService>();
+
 
 // ---------- JWT configuration ----------
 var jwtSection = builder.Configuration.GetSection("Jwt");

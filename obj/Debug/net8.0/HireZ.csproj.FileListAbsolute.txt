@@ -171,4 +171,3 @@ C:\Users\PC\Desktop\HireZ\HireZ\obj\Debug\net8.0\refint\HireZ.dll
 C:\Users\PC\Desktop\HireZ\HireZ\obj\Debug\net8.0\HireZ.pdb
 C:\Users\PC\Desktop\HireZ\HireZ\obj\Debug\net8.0\HireZ.genruntimeconfig.cache
 C:\Users\PC\Desktop\HireZ\HireZ\obj\Debug\net8.0\ref\HireZ.dll
-C:\Users\PC\Desktop\HireZ\HireZ\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
