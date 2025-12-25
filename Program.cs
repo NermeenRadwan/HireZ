@@ -66,7 +66,8 @@ builder.Services.AddScoped<IJobService, JobService>();
 builder.Services.AddScoped<InterviewService, InterviewService>();
 builder.Services.AddSingleton<IAiClient, AiClientAdapter>();
 builder.Services.AddScoped<InterviewService, InterviewService>();
-
+builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
+builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 
 // ---------- JWT configuration ----------
 var jwtSection = builder.Configuration.GetSection("Jwt");
