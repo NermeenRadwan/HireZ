@@ -10,62 +10,53 @@ namespace HireZ.Data
         {
         }
 
-        public DbSet<User> Users { get; set; } = null!;
-        public DbSet<Resume> Resumes { get; set; } = null!;
-        public DbSet<ResumeText> ResumeTexts { get; set; } = null!;
-        public DbSet<ResumeFeedback> ResumeFeedbacks { get; set; } = null!;
-        public DbSet<MatchedKeyword> MatchedKeywords { get; set; } = null!;
-        public DbSet<InterviewSession> InterviewSessions { get; set; } = null!;
-        public DbSet<Analytics> Analytics { get; set; } = null!;
+        // Core domain sets (keep these names consistent with your models)
+        public DbSet<User> Users { get; set; }
+        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<ResumeText> ResumeTexts { get; set; }
+        public DbSet<MatchedKeyword> MatchedKeywords { get; set; }
+        public DbSet<ResumeFeedback> ResumeFeedbacks { get; set; }
+
+        // Jobs & ATS
         public DbSet<Job> Jobs { get; set; }
 
+        // Interview entities
+        public DbSet<InterviewSession> InterviewSessions { get; set; }
+        public DbSet<InterviewQuestion> InterviewQuestions { get; set; }
+        public DbSet<InterviewAnswer> InterviewAnswers { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        // other DbSets remain...
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
-            builder.Entity<User>()
-                .HasIndex(u => u.Email)
-                .IsUnique();
+            // InterviewSession -> InterviewQuestion (1:n)
+            modelBuilder.Entity<InterviewSession>()
+                .HasOne(s => s.Resume)
+                .WithMany(r => r.InterviewSessions)  // uses inverse property on Resume
+                .HasForeignKey(s => s.ResumeId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<User>()
-                .Property(u => u.Email)
-                .IsRequired()
-                .HasMaxLength(256);
+            // InterviewSession -> Resume (many sessions per resume). Use WithMany() to avoid requiring inverse navigation property on Resume.
+            modelBuilder.Entity<InterviewSession>()
+                .HasOne<Resume>()
+                .WithMany() // do not require Resume.InterviewSessions
+                .HasForeignKey(s => s.ResumeId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<Resume>()
-                .HasOne(r => r.User)
-                .WithMany(u => u.Resumes)
-                .HasForeignKey(r => r.UserId)
-                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            // MatchedKeyword minimal mapping (if needed)
+            modelBuilder.Entity<MatchedKeyword>()
+                .HasKey(mk => mk.Id);
 
-            builder.Entity<ResumeText>()
-                .HasOne(rt => rt.Resume)
-                .WithOne(r => r.ResumeText)
-                .HasForeignKey<ResumeText>(rt => rt.ResumeId)
-                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            // ResumeFeedback mapping (if needed)
+            modelBuilder.Entity<ResumeFeedback>()
+                .HasKey(rf => rf.Id);
 
-            builder.Entity<ResumeFeedback>()
-                .HasOne(f => f.Resume)
-                .WithMany(r => r.Feedbacks)
-                .HasForeignKey(f => f.ResumeId)
-                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
+            // Ensure unique constraints / indexes you rely on are defined, e.g. unique email on User if desired:
+            // modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
 
-            builder.Entity<MatchedKeyword>()
-                .HasOne(mk => mk.Resume)
-                .WithMany(r => r.MatchedKeywords)
-                .HasForeignKey(mk => mk.ResumeId)
-                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
-
-            builder.Entity<InterviewSession>()
-                .HasOne(i => i.Resume)
-                .WithMany(r => r.InterviewSessions)
-                .HasForeignKey(i => i.ResumeId)
-                .OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
-
-            builder.Entity<Analytics>()
-                .Property(a => a.Event)
-                .HasMaxLength(200);
+            // Additional configuration here as required...
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
+using System.Text.Json;
 using System.Threading.Tasks;
-using HireZ.Data; // ApplicationDbContext
+using HireZ.Data;
 using HireZ.Utilities;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,28 +12,14 @@ namespace HireZ.Services
     public class InterviewService : IInterviewService
     {
         private readonly ApplicationDbContext _db;
-        public InterviewService(ApplicationDbContext db)
+        private readonly IAiService _ai; // assumed interface
+        public InterviewService(ApplicationDbContext db, IAiService ai)
         {
             _db = db;
+            _ai = ai;
         }
 
-        public async Task<List<string>> GenerateInterviewQuestionsAsync(int resumeId, int? jobId = null, int count = 8)
-        {
-            var resume = await _db.Resumes.Include(r => r.ResumeText).FirstOrDefaultAsync(r => r.Id == resumeId);
-            if (resume == null) throw new InvalidOperationException("Resume not found");
-
-            string resumeText = resume.ResumeText?.Text ?? "";
-
-            string? jobDescription = null;
-            if (jobId.HasValue)
-            {
-                var job = await _db.Jobs.FindAsync(jobId.Value);
-                if (job != null) jobDescription = $"{job.Title} {job.Description} {job.Requirements}";
-            }
-
-            return await GenerateInterviewQuestionsAsync(resumeText, jobDescription, count);
-        }
-
+        // Existing heuristic generator (kept as fallback)
         public Task<List<string>> GenerateInterviewQuestionsAsync(string resumeText, string? jobDescription = null, int count = 8)
         {
             var resumeKeywords = TextProcessing.ExtractKeywords(resumeText);
@@ -92,10 +78,145 @@ namespace HireZ.Services
             return Task.FromResult(questions.Take(count).ToList());
         }
 
+        public async Task<List<string>> GenerateInterviewQuestionsAsync(int resumeId, int? jobId = null, int count = 8)
+        {
+            var resume = await _db.Resumes.Include(r => r.ResumeText).FirstOrDefaultAsync(r => r.Id == resumeId);
+            if (resume == null) throw new InvalidOperationException("Resume not found");
+
+            string resumeText = resume.ResumeText?.Text ?? "";
+            string? jobDescription = null;
+            if (jobId.HasValue)
+            {
+                var job = await _db.Jobs.FindAsync(jobId.Value);
+                if (job != null) jobDescription = $"{job.Title} {job.Description} {job.Requirements}";
+            }
+
+            return await GenerateInterviewQuestionsAsync(resumeText, jobDescription, count);
+        }
+
+        /// <summary>
+        /// Create interview session, ask AI to generate structured questions,
+        /// persist them to InterviewQuestion table and return session id.
+        /// Falls back to heuristic generator on failure.
+        /// </summary>
+        public async Task<int> CreateInterviewSessionAndGenerateAsync(int resumeId, int? jobId, int count = 8, string preferredSource = "ai")
+        {
+            // Create session
+            var session = new Models.InterviewSession
+            {
+                ResumeId = resumeId,
+                JobId = jobId,
+                Status = "Queued",
+                CreatedAt = DateTime.UtcNow
+            };
+            _db.InterviewSessions.Add(session);
+            await _db.SaveChangesAsync(); // get session.Id
+
+            List<(string QuestionText, string Category, string Source)> questionsResult = null;
+
+            if (preferredSource?.ToLowerInvariant() == "ai")
+            {
+                try
+                {
+                    // Build prompt
+                    var resume = await _db.Resumes.Include(r => r.ResumeText).FirstOrDefaultAsync(r => r.Id == resumeId);
+                    if (resume == null) throw new InvalidOperationException("Resume not found");
+
+                    var resumeText = resume.ResumeText?.Text ?? "";
+                    string? jobDescription = null;
+                    if (jobId.HasValue)
+                    {
+                        var job = await _db.Jobs.FindAsync(jobId.Value);
+                        if (job != null) jobDescription = $"{job.Title} {job.Description} {job.Requirements}";
+                    }
+
+                    var prompt = AiPromptBuilder.BuildInterviewQuestionsPrompt(resumeText, jobDescription, count);
+                    var aiResponse = await _ai.GenerateAsync(prompt);
+
+                    // Try parse JSON array response
+                    questionsResult = ParseAiQuestions(aiResponse, count);
+
+                    if (questionsResult == null || questionsResult.Count == 0)
+                    {
+                        // fallback to heuristic
+                        var fallback = await GenerateInterviewQuestionsAsync(resumeText, jobDescription, count);
+                        questionsResult = fallback.Select(q => (q, "mixed", "Heuristic")).ToList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log if you have logger; fallback to heuristic
+                    var fallback2 = await GenerateInterviewQuestionsAsync(resumeId, jobId, count);
+                    questionsResult = fallback2.Select(q => (q, "mixed", "Heuristic")).ToList();
+                }
+            }
+            else
+            {
+                // Direct heuristic
+                var fallback = await GenerateInterviewQuestionsAsync(resumeId, jobId, count);
+                questionsResult = fallback.Select(q => (q, "mixed", "Heuristic")).ToList();
+            }
+
+            // Persist questions
+            foreach (var q in questionsResult.Take(count))
+            {
+                var iq = new Models.InterviewQuestion
+                {
+                    InterviewSessionId = session.Id,
+                    QuestionText = q.QuestionText,
+                    Category = string.IsNullOrWhiteSpace(q.Category) ? null : q.Category,
+                    Source = q.Source,
+                    CreatedAt = DateTime.UtcNow
+                };
+                _db.InterviewQuestions.Add(iq);
+            }
+
+            session.Status = "Generated";
+            await _db.SaveChangesAsync();
+
+            return session.Id;
+        }
+
+        public async Task<Models.InterviewSession?> GetSessionAsync(int sessionId)
+        {
+            return await _db.InterviewSessions
+                .Include(s => s.Questions)
+                .FirstOrDefaultAsync(s => s.Id == sessionId);
+        }
+
+        private List<(string QuestionText, string Category, string Source)> ParseAiQuestions(string aiResponse, int limit)
+        {
+            if (string.IsNullOrWhiteSpace(aiResponse)) return null;
+
+            try
+            {
+                // Expecting JSON array: [{ "question":"...", "category":"technical" }]
+                using var doc = JsonDocument.Parse(aiResponse);
+                if (doc.RootElement.ValueKind != JsonValueKind.Array) return null;
+                var list = new List<(string QuestionText, string Category, string Source)>();
+                foreach (var el in doc.RootElement.EnumerateArray())
+                {
+                    var q = el.TryGetProperty("question", out var qElem) ? qElem.GetString() ?? "" : "";
+                    var cat = el.TryGetProperty("category", out var cElem) ? cElem.GetString() : null;
+                    if (!string.IsNullOrWhiteSpace(q))
+                    {
+                        list.Add((q.Trim(), string.IsNullOrWhiteSpace(cat) ? "mixed" : cat.Trim(), "AI"));
+                    }
+                    if (list.Count >= limit) break;
+                }
+                return list;
+            }
+            catch
+            {
+                // parsing failed
+                return null;
+            }
+        }
+
         private string? ExtractRepresentativeSentence(string text)
         {
             if (string.IsNullOrWhiteSpace(text)) return null;
-            var sentences = Regex.Split(text, @"(?<=[\.!\?])\s+");
+            var sentences = System.Text.RegularExpressions.Regex.Split(text, @"(?<=[\.!\?])\s+");
             var ordered = sentences.OrderByDescending(s => s.Length);
             foreach (var s in ordered)
             {

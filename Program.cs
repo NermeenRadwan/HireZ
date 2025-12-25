@@ -63,7 +63,9 @@ builder.Services.AddSingleton<ResumeAnalysisQueue>();
 builder.Services.AddHostedService<ResumeAnalysisWorker>();
 builder.Services.AddScoped<IResumeService, ResumeService>();
 builder.Services.AddScoped<IJobService, JobService>();
-builder.Services.AddScoped<IInterviewService, InterviewService>();
+builder.Services.AddScoped<InterviewService, InterviewService>();
+builder.Services.AddSingleton<IAiClient, AiClientAdapter>();
+builder.Services.AddScoped<InterviewService, InterviewService>();
 
 
 // ---------- JWT configuration ----------

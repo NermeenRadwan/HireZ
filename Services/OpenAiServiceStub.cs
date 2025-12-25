@@ -31,5 +31,10 @@ namespace HireZ.Services
 
             return Task.FromResult(new AiAnalysisResult(json, atsScore));
         }
+
+        public Task<string> GenerateAsync(object prompt)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

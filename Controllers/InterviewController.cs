@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using HireZ.Services;
+using HireZ.DTOs;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq;
 
 namespace HireZ.Controllers
 {
@@ -15,33 +17,42 @@ namespace HireZ.Controllers
             _interviewService = interviewService;
         }
 
-        /// <summary>
-        /// Generate interview questions by passing resumeId and optional jobId.
-        /// </summary>
-        [HttpPost("generate")]
+        [HttpPost("sessions")]
         [Authorize]
-        public async Task<IActionResult> Generate([FromQuery] int resumeId, [FromQuery] int? jobId, [FromQuery] int count = 8)
+        public async Task<IActionResult> CreateSession([FromBody] CreateInterviewSessionRequest req)
         {
-            var questions = await _interviewService.GenerateInterviewQuestionsAsync(resumeId, jobId, count);
-            return Ok(new { Questions = questions });
+            if (req == null || req.ResumeId <= 0) return BadRequest("ResumeId is required.");
+
+            var preferred = string.IsNullOrWhiteSpace(req.PreferredSource) ? "ai" : req.PreferredSource;
+            var sessionId = await _interviewService.CreateInterviewSessionAndGenerateAsync(req.ResumeId, req.JobId, req.Count, preferred);
+            return CreatedAtAction(nameof(GetSession), new { id = sessionId }, new { sessionId });
         }
 
-        /// <summary>
-        /// Generate questions from raw text payload (client has resume text).
-        /// </summary>
-        public class GenerateFromTextRequest
-        {
-            public string ResumeText { get; set; } = "";
-            public string? JobDescription { get; set; }
-            public int Count { get; set; } = 8;
-        }
-
-        [HttpPost("generate/from-text")]
+        [HttpGet("sessions/{id}")]
         [Authorize]
-        public async Task<IActionResult> GenerateFromText([FromBody] GenerateFromTextRequest req)
+        public async Task<IActionResult> GetSession(int id)
         {
-            var questions = await _interviewService.GenerateInterviewQuestionsAsync(req.ResumeText ?? "", req.JobDescription, req.Count);
-            return Ok(new { Questions = questions });
+            var session = await _interviewService.GetSessionAsync(id);
+            if (session == null) return NotFound();
+
+            var dto = new InterviewSessionDto
+            {
+                Id = session.Id,
+                ResumeId = session.ResumeId,
+                JobId = session.JobId,
+                Status = session.Status,
+                CreatedAt = session.CreatedAt,
+                Questions = session.Questions.Select(q => new InterviewQuestionDto
+                {
+                    Id = q.Id,
+                    QuestionText = q.QuestionText,
+                    Category = q.Category,
+                    Source = q.Source,
+                    CreatedAt = q.CreatedAt
+                }).ToList()
+            };
+
+            return Ok(dto);
         }
     }
 }

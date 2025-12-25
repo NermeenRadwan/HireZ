@@ -136,5 +136,10 @@ namespace HireZ.Services
                 return new AiAnalysisResult("", null);
             }
         }
+
+        public Task<string> GenerateAsync(object prompt)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

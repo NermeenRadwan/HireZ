@@ -5,5 +5,6 @@
     public interface IAiService
     {
         Task<AiAnalysisResult> AnalyzeResumeAsync(int resumeId, string resumeText, CancellationToken cancellation = default);
+        Task<string> GenerateAsync(object prompt);
     }
 }

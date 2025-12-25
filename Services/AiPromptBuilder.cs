@@ -1,4 +1,5 @@
-﻿namespace HireZ.Services
+﻿
+namespace HireZ.Services
 {
     public static class AiPromptBuilder
     {
@@ -28,6 +29,11 @@
             sb.AppendLine();
             sb.AppendLine("Important: If you cannot extract anything, return an object with empty summary, ats_score 0, and empty array for recommended_improvements.");
             return sb.ToString();
+        }
+
+        internal static object BuildInterviewQuestionsPrompt(string resumeText, string? jobDescription, int count)
+        {
+            throw new NotImplementedException();
         }
     }
 }
