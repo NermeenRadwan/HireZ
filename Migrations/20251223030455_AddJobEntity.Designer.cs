@@ -4,6 +4,7 @@ using HireZ.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HireZ.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251223030455_AddJobEntity")]
+    partial class AddJobEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace HireZ.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HireZ.Models.InterviewAnswer", b =>
+            modelBuilder.Entity("HireZ.Models.Analytics", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,58 +33,21 @@ namespace HireZ.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AnswerText")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Feedback")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("InterviewQuestionId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Score")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("InterviewAnswers");
-                });
-
-            modelBuilder.Entity("HireZ.Models.InterviewQuestion", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Category")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("InterviewSessionId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("QuestionText")
+                    b.Property<string>("DataJson")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Source")
+                    b.Property<string>("Event")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("InterviewSessionId");
-
-                    b.ToTable("InterviewQuestions");
+                    b.ToTable("Analytics");
                 });
 
             modelBuilder.Entity("HireZ.Models.InterviewSession", b =>
@@ -95,25 +61,20 @@ namespace HireZ.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("JobId")
-                        .HasColumnType("int");
+                    b.Property<string>("QuestionsJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ResumeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ResumeId1")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
+                    b.Property<string>("ScoresJson")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ResumeId");
-
-                    b.HasIndex("ResumeId1");
 
                     b.ToTable("InterviewSessions");
                 });
@@ -274,7 +235,8 @@ namespace HireZ.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
@@ -286,31 +248,19 @@ namespace HireZ.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("HireZ.Models.InterviewQuestion", b =>
-                {
-                    b.HasOne("HireZ.Models.InterviewSession", "InterviewSession")
-                        .WithMany("Questions")
-                        .HasForeignKey("InterviewSessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("InterviewSession");
                 });
 
             modelBuilder.Entity("HireZ.Models.InterviewSession", b =>
                 {
-                    b.HasOne("HireZ.Models.Resume", null)
-                        .WithMany()
+                    b.HasOne("HireZ.Models.Resume", "Resume")
+                        .WithMany("InterviewSessions")
                         .HasForeignKey("ResumeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("HireZ.Models.Resume", "Resume")
-                        .WithMany("InterviewSessions")
-                        .HasForeignKey("ResumeId1");
 
                     b.Navigation("Resume");
                 });
@@ -357,11 +307,6 @@ namespace HireZ.Migrations
                         .IsRequired();
 
                     b.Navigation("Resume");
-                });
-
-            modelBuilder.Entity("HireZ.Models.InterviewSession", b =>
-                {
-                    b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("HireZ.Models.Resume", b =>

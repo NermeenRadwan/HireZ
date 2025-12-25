@@ -26,7 +26,7 @@ namespace HireZ.Services
                       ?? throw new InvalidOperationException(
                           "Gemini API key is not configured. Set GEMINI_API_KEY or Gemini:ApiKey.");
 
-            _model = config.GetValue<string>("Gemini:Model") ?? "gemini-1.5-flash";
+            _model = config.GetValue<string>("Gemini:Model") ?? "gemini-2.5-pro";
         }
 
         public async Task<AiAnalysisResult> AnalyzeResumeAsync(
@@ -135,6 +135,11 @@ namespace HireZ.Services
 
                 return new AiAnalysisResult("", null);
             }
+        }
+
+        public Task<string> GenerateAsync(object prompt)
+        {
+            throw new NotImplementedException();
         }
     }
 }
