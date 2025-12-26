@@ -8,5 +8,6 @@ namespace HireZ.Services
         Task<string?> GetExtractedTextAsync(int resumeId);
         Task<ResumeDto?> GetResumeAsync(int resumeId);
         Task QueueAnalysisAsync(int resumeId);
+        Task<List<ResumeDto>> GetUserResumesAsync(int userId);
     }
 }

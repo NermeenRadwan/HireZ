@@ -122,6 +122,18 @@ builder.Services.AddHttpClient<IAiService, GeminiService>(client =>
 
 builder.Services.AddAuthorization();
 
+// ---------- CORS configuration ----------
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:8000", "http://localhost:3000", "http://127.0.0.1:8000", "http://127.0.0.1:3000")
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+    });
+});
+
 // ---------- Build app ----------
 var app = builder.Build();
 
@@ -157,11 +169,21 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
+
+// Enable static files serving from wwwroot
+app.UseStaticFiles();
+
+// Enable default file serving (e.g., index.html)
+app.UseDefaultFiles();
 
 app.UseAuthentication(); // must come before UseAuthorization
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Fallback to index.html for client-side routing (optional, for SPA support)
+app.MapFallbackToFile("index.html");
 
 app.Run();

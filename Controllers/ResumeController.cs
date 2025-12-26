@@ -53,5 +53,17 @@ namespace HireZ.Controllers
             await _resumeService.QueueAnalysisAsync(id);
             return Accepted(new { message = "Reprocessing queued." });
         }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetAll()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "userId" || c.Type == ClaimTypes.NameIdentifier);
+            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out var userId))
+                return Unauthorized();
+
+            var resumes = await _resumeService.GetUserResumesAsync(userId);
+            return Ok(resumes);
+        }
     }
 }

@@ -3,6 +3,7 @@ using HireZ.DTOs.Resume;
 using HireZ.Models;
 using HireZ.Services.Background;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace HireZ.Services
 {
@@ -82,6 +83,24 @@ namespace HireZ.Services
         {
             var t = await _db.ResumeTexts.AsNoTracking().FirstOrDefaultAsync(rt => rt.ResumeId == resumeId);
             return t?.Text;
+        }
+
+        public async Task<List<ResumeDto>> GetUserResumesAsync(int userId)
+        {
+            var resumes = await _db.Resumes
+                .Where(r => r.UserId == userId)
+                .OrderByDescending(r => r.UploadedAt)
+                .Select(r => new ResumeDto
+                {
+                    Id = r.Id,
+                    FileName = r.FileName,
+                    FilePath = r.FilePath,
+                    UploadedAt = r.UploadedAt,
+                    Status = r.Status.ToString()
+                })
+                .ToListAsync();
+
+            return resumes;
         }
     }
 }
