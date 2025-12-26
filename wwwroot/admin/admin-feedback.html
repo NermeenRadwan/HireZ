@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Management - HireZ Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="admin-style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="admin-dashboard.html">
+                <i class="fas fa-shield-alt me-2"></i>HireZ Admin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i class="fas fa-users me-1"></i>Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admin-feedback.html">
+                            <i class="fas fa-comments me-1"></i>Feedback
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-settings.html">
+                            <i class="fas fa-cog me-1"></i>Settings
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-shield me-1"></i>Admin User
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="admin-settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../index.html"><i class="fas fa-home me-2"></i>Main Site</a></li>
+                            <li><a class="dropdown-item" href="admin-login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Admin Sidebar -->
+            <div class="col-md-3 col-lg-2 admin-sidebar">
+                <div class="admin-sidebar-content">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin-dashboard.html">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin-users.html">
+                                <i class="fas fa-users me-2"></i>User Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="admin-feedback.html">
+                                <i class="fas fa-comments me-2"></i>Feedback System
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin-settings.html">
+                                <i class="fas fa-cog me-2"></i>System Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                <i class="fas fa-home me-2"></i>Main Site
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9 col-lg-10 admin-main-content">
+                <div class="container-fluid py-4">
+                    <!-- Page Header -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="h3 mb-1">Feedback Management</h1>
+                            <p class="text-muted">Monitor and manage user feedback and system performance</p>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger me-2">
+                                <i class="fas fa-download me-2"></i>Export Feedback
+                            </button>
+                            <button class="btn btn-outline-danger">
+                                <i class="fas fa-chart-bar me-2"></i>Analytics
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Stats -->
+                    <div class="row mb-4">
+                        <div class="col-md-3 mb-3">
+                            <div class="admin-stat-card">
+                                <div class="admin-stat-icon bg-primary">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="admin-stat-content">
+                                    <h3 class="admin-stat-number">2,847</h3>
+                                    <p class="admin-stat-label">Total Feedback</p>
+                                    <small class="text-success">
+                                        <i class="fas fa-arrow-up me-1"></i>+23% this month
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="admin-stat-card">
+                                <div class="admin-stat-icon bg-success">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="admin-stat-content">
+                                    <h3 class="admin-stat-number">4.7</h3>
+                                    <p class="admin-stat-label">Average Rating</p>
+                                    <small class="text-success">
+                                        <i class="fas fa-arrow-up me-1"></i>+0.2 this month
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="admin-stat-card">
+                                <div class="admin-stat-icon bg-warning">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="admin-stat-content">
+                                    <h3 class="admin-stat-number">156</h3>
+                                    <p class="admin-stat-label">Pending Review</p>
+                                    <small class="text-warning">
+                                        <i class="fas fa-exclamation me-1"></i>Needs attention
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="admin-stat-card">
+                                <div class="admin-stat-icon bg-info">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </div>
+                                <div class="admin-stat-content">
+                                    <h3 class="admin-stat-number">89%</h3>
+                                    <p class="admin-stat-label">Positive Feedback</p>
+                                    <small class="text-info">
+                                        <i class="fas fa-chart-line me-1"></i>High satisfaction
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Analytics -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8">
+                            <div class="admin-card">
+                                <div class="admin-card-header">
+                                    <h5 class="admin-card-title mb-0">
+                                        <i class="fas fa-chart-line me-2"></i>Feedback Trends
+                                    </h5>
+                                </div>
+                                <div class="admin-card-body">
+                                    <canvas id="feedbackTrendsChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="admin-card">
+                                <div class="admin-card-header">
+                                    <h5 class="admin-card-title mb-0">
+                                        <i class="fas fa-chart-pie me-2"></i>Feedback Categories
+                                    </h5>
+                                </div>
+                                <div class="admin-card-body">
+                                    <canvas id="feedbackCategoriesChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filters and Search -->
+                    <div class="admin-card mb-4">
+                        <div class="admin-card-body">
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label for="searchFeedback" class="form-label">Search Feedback</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="searchFeedback" placeholder="Search feedback content">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="feedbackTypeFilter" class="form-label">Type</label>
+                                    <select class="form-select" id="feedbackTypeFilter">
+                                        <option value="">All Types</option>
+                                        <option value="interview">Interview</option>
+                                        <option value="system">System</option>
+                                        <option value="support">Support</option>
+                                        <option value="feature">Feature Request</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="feedbackRatingFilter" class="form-label">Rating</label>
+                                    <select class="form-select" id="feedbackRatingFilter">
+                                        <option value="">All Ratings</option>
+                                        <option value="5">5 Stars</option>
+                                        <option value="4">4 Stars</option>
+                                        <option value="3">3 Stars</option>
+                                        <option value="2">2 Stars</option>
+                                        <option value="1">1 Star</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="feedbackStatusFilter" class="form-label">Status</label>
+                                    <select class="form-select" id="feedbackStatusFilter">
+                                        <option value="">All Status</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="reviewed">Reviewed</option>
+                                        <option value="resolved">Resolved</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="feedbackDateFilter" class="form-label">Date Range</label>
+                                    <select class="form-select" id="feedbackDateFilter">
+                                        <option value="">All Time</option>
+                                        <option value="today">Today</option>
+                                        <option value="week">This Week</option>
+                                        <option value="month">This Month</option>
+                                        <option value="quarter">This Quarter</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-1">
+                                    <label class="form-label">&nbsp;</label>
+                                    <button class="btn btn-outline-secondary w-100" onclick="clearFeedbackFilters()">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback List -->
+                    <div class="admin-card">
+                        <div class="admin-card-header d-flex justify-content-between align-items-center">
+                            <h5 class="admin-card-title mb-0">
+                                <i class="fas fa-list me-2"></i>All Feedback
+                            </h5>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-filter me-1"></i>Advanced Filter
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-sort me-1"></i>Sort
+                                </button>
+                            </div>
+                        </div>
+                        <div class="admin-card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox" class="form-check-input" id="selectAllFeedback">
+                                            </th>
+                                            <th>User</th>
+                                            <th>Type</th>
+                                            <th>Rating</th>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="form-check-input">
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="user-avatar me-3">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Sarah Johnson</h6>
+                                                        <p class="text-muted mb-0">sarah.johnson@company.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-primary">Interview</span></td>
+                                            <td>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <span class="ms-1">5.0</span>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-success">Resolved</span></td>
+                                            <td>Dec 15, 2024</td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-primary" title="View Details">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-success" title="Mark as Resolved">
+                                                        <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-warning" title="Reply">
+                                                        <i class="fas fa-reply"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger" title="Delete">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="form-check-input">
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="user-avatar me-3">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Mike Chen</h6>
+                                                        <p class="text-muted mb-0">mike.chen@company.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-info">System</span></td>
+                                            <td>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="far fa-star text-muted"></i>
+                                                    <span class="ms-1">4.0</span>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td>Dec 14, 2024</td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-primary" title="View Details">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-success" title="Mark as Resolved">
+                                                        <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-warning" title="Reply">
+                                                        <i class="fas fa-reply"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger" title="Delete">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" class="form-check-input">
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="user-avatar me-3">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Emily Davis</h6>
+                                                        <p class="text-muted mb-0">emily.davis@company.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-success">Feature</span></td>
+                                            <td>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="far fa-star text-muted"></i>
+                                                    <i class="far fa-star text-muted"></i>
+                                                    <span class="ms-1">3.0</span>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-info">Reviewed</span></td>
+                                            <td>Dec 13, 2024</td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-primary" title="View Details">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-success" title="Mark as Resolved">
+                                                        <i class="fas fa-check"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-warning" title="Reply">
+                                                        <i class="fas fa-reply"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger" title="Delete">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="admin-script.js"></script>
+</body>
+</html>

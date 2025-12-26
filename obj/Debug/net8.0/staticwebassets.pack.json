@@ -1,0 +1,189 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/about.html",
+      "PackagePath": "staticwebassets/about.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-dashboard.html",
+      "PackagePath": "staticwebassets/admin/admin-dashboard.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-error.html",
+      "PackagePath": "staticwebassets/admin/admin-error.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-feedback.html",
+      "PackagePath": "staticwebassets/admin/admin-feedback.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-login.html",
+      "PackagePath": "staticwebassets/admin/admin-login.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-script.js",
+      "PackagePath": "staticwebassets/admin/admin-script.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-settings.html",
+      "PackagePath": "staticwebassets/admin/admin-settings.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-style.css",
+      "PackagePath": "staticwebassets/admin/admin-style.css"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-users.html",
+      "PackagePath": "staticwebassets/admin/admin-users.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats-matcher.html",
+      "PackagePath": "staticwebassets/ats-matcher.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats.html",
+      "PackagePath": "staticwebassets/ats.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/all.min.css",
+      "PackagePath": "staticwebassets/css/all.min.css"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/animate.min.css",
+      "PackagePath": "staticwebassets/css/animate.min.css"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/mdb.min.css",
+      "PackagePath": "staticwebassets/css/mdb.min.css"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/wow.css",
+      "PackagePath": "staticwebassets/css/wow.css"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-builder.html",
+      "PackagePath": "staticwebassets/cv-builder.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-upload.html",
+      "PackagePath": "staticwebassets/cv-upload.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/dashboard.html",
+      "PackagePath": "staticwebassets/dashboard.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/error.html",
+      "PackagePath": "staticwebassets/error.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/feedback.html",
+      "PackagePath": "staticwebassets/feedback.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview-prep.html",
+      "PackagePath": "staticwebassets/interview-prep.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview.html",
+      "PackagePath": "staticwebassets/interview.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interviewDate.html",
+      "PackagePath": "staticwebassets/interviewDate.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/all.min.js",
+      "PackagePath": "staticwebassets/js/all.min.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/api-client.js",
+      "PackagePath": "staticwebassets/js/api-client.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/auth.js",
+      "PackagePath": "staticwebassets/js/auth.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/jquery.slim.min.js",
+      "PackagePath": "staticwebassets/js/jquery.slim.min.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/main.js",
+      "PackagePath": "staticwebassets/js/main.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/mdb.umd.min.js",
+      "PackagePath": "staticwebassets/js/mdb.umd.min.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/popper.min.js",
+      "PackagePath": "staticwebassets/js/popper.min.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/wow.min.js",
+      "PackagePath": "staticwebassets/js/wow.min.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/login.html",
+      "PackagePath": "staticwebassets/login.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/profile.html",
+      "PackagePath": "staticwebassets/profile.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/recommendations.html",
+      "PackagePath": "staticwebassets/recommendations.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/register.html",
+      "PackagePath": "staticwebassets/register.html"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/sw.js",
+      "PackagePath": "staticwebassets/sw.js"
+    },
+    {
+      "Id": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/upload.html",
+      "PackagePath": "staticwebassets/upload.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.HireZ.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.HireZ.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.HireZ.props",
+      "PackagePath": "build\\HireZ.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.HireZ.props",
+      "PackagePath": "buildMultiTargeting\\HireZ.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.HireZ.props",
+      "PackagePath": "buildTransitive\\HireZ.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

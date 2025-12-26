@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Preparation - HireZ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="dashboard.html">
+        <i class="fas fa-users me-2"></i>HireZ
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv-upload.html"><i class="fas fa-upload me-1"></i>Upload CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv-builder.html"><i class="fas fa-edit me-1"></i>Build CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="ats-matcher.html"><i class="fas fa-search me-1"></i>ATS Matcher</a></li>
+          <li class="nav-item"><a class="nav-link active" href="interview-prep.html"><i class="fas fa-question-circle me-1"></i>Interview Prep</a></li>
+          <li class="nav-item"><a class="nav-link" href="recommendations.html"><i class="fas fa-star me-1"></i>Recommendations</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              <i class="fas fa-user me-1"></i>John Doe
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="feedback.html"><i class="fas fa-comments me-2"></i>Feedback</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container-fluid" style="margin-top: 80px;">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 col-lg-2 sidebar">
+        <div class="sidebar-content">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cv-upload.html">
+                <i class="fas fa-upload me-2"></i>Upload CV
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cv-builder.html">
+                <i class="fas fa-edit me-2"></i>Build CV
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ats-matcher.html">
+                <i class="fas fa-search me-2"></i>ATS Matcher
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="interview-prep.html">
+                <i class="fas fa-question-circle me-2"></i>Interview Prep
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recommendations.html">
+                <i class="fas fa-star me-2"></i>Recommendations
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="col-md-9 col-lg-10 main-content">
+        <div class="container-fluid py-4">
+        <h2 class="mb-4"><i class="fas fa-clipboard-question me-2"></i>Interview Preparation</h2>
+
+        <!-- Open Calendar Button -->
+        <button class="btn btn-outline-primary mb-4" data-bs-toggle="modal" data-bs-target="#calendarModal">
+          <i class="fas fa-calendar-alt me-2"></i>Open Calendar
+        </button>
+
+        <!-- Calendar Modal -->
+        <div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="calendarModalLabel">
+                  <i class="fas fa-calendar-alt me-2"></i>Schedule Interview
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form id="calendarForm">
+                  <div class="mb-3">
+                    <label class="form-label">Candidate Name</label>
+                    <input type="text" class="form-control" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-control" id="calendarDate" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Time</label>
+                    <input type="time" class="form-control" id="calendarTime" required>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" type="button" onclick="saveCalendarEvent()">
+                  <i class="fas fa-save me-2"></i>Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Generator -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <form onsubmit="generateQuestions(); return false;">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Select Resume *</label>
+                  <select id="resumeSelect" class="form-select" required>
+                    <option value="">Loading resumes...</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Job ID (Optional)</label>
+                  <input type="number" id="jobIdInput" class="form-control" placeholder="Leave empty for general questions">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Number of Questions</label>
+                  <input type="number" id="questionCount" class="form-control" value="8" min="1" max="20">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Question Source</label>
+                  <select id="questionSource" class="form-select">
+                    <option value="ai">AI Generated</option>
+                    <option value="heuristic">Heuristic</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Job Title (for context)</label>
+                  <input type="text" id="interviewJobTitle" class="form-control" placeholder="e.g. Frontend Developer">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary mt-3"><i class="fas fa-magic me-1"></i>Generate Questions</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Questions Section -->
+        <div id="questionsSection" class="d-none">
+          <h4>Questions</h4>
+          <div class="question-item border rounded p-3 mb-3">
+            <p><strong>1. Explain the difference between var, let, and const in JavaScript.</strong></p>
+            <button class="btn btn-sm btn-outline-primary" onclick="showAnswer(this)"><i class="fas fa-eye me-1"></i>Show Answer</button>
+            <button class="btn btn-sm btn-outline-success" onclick="markAsPracticed(this)"><i class="fas fa-check me-1"></i>Mark as Practiced</button>
+            <div class="answer-content d-none mt-2">
+              <p><code>var</code> is function-scoped, <code>let</code> and <code>const</code> are block-scoped. <code>const</code> cannot be reassigned.</p>
+            </div>
+          </div>
+
+          <div id="systemDesignQuestions" class="d-none">
+            <h5>System Design Questions</h5>
+            <div class="question-item border rounded p-3 mb-3">
+              <p><strong>Design a scalable movie ticket booking system.</strong></p>
+              <button class="btn btn-sm btn-outline-primary" onclick="showAnswer(this)"><i class="fas fa-eye me-1"></i>Show Answer</button>
+              <button class="btn btn-sm btn-outline-success" onclick="markAsPracticed(this)"><i class="fas fa-check me-1"></i>Mark as Practiced</button>
+              <div class="answer-content d-none mt-2">
+                <p>Include user services, theaters, booking, payment microservices, and caching for seat availability.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress my-3" style="height: 20px;">
+            <div class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <span class="badge bg-primary">0/2</span>
+          <span class="badge bg-info text-dark ms-2">0%</span>
+
+          <div class="mt-3">
+            <button class="btn btn-outline-secondary" onclick="regenerateQuestions()">Regenerate</button>
+            <button class="btn btn-success" onclick="startPractice()">Start Practice</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api-client.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    let userResumes = [];
+    let currentSessionId = null;
+
+    // Load resumes on page load
+    document.addEventListener('DOMContentLoaded', async function() {
+      await loadResumes();
+    });
+
+    async function loadResumes() {
+      try {
+        userResumes = await API.resume.getAll();
+        const selector = document.getElementById('resumeSelect');
+        if (selector) {
+          selector.innerHTML = '<option value="">Select a resume</option>';
+          userResumes.forEach(resume => {
+            const option = document.createElement('option');
+            option.value = resume.id;
+            option.textContent = resume.fileName || `Resume #${resume.id}`;
+            selector.appendChild(option);
+          });
+        }
+      } catch (error) {
+        console.error('Error loading resumes:', error);
+        showAlert('warning', 'Could not load resumes. Please upload a resume first.');
+      }
+    }
+
+    async function generateQuestions() {
+      const resumeId = parseInt(document.getElementById('resumeSelect').value);
+      const jobIdInput = document.getElementById('jobIdInput').value;
+      const questionCount = parseInt(document.getElementById('questionCount').value) || 8;
+      const preferredSource = document.getElementById('questionSource').value || 'ai';
+
+      if (!resumeId) {
+        showAlert('warning', 'Please select a resume.');
+        return;
+      }
+
+      const submitBtn = document.querySelector('form button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Generating...';
+      }
+
+      try {
+        // Create interview session
+        const sessionData = {
+          resumeId: resumeId,
+          jobId: jobIdInput ? parseInt(jobIdInput) : null,
+          count: questionCount,
+          preferredSource: preferredSource
+        };
+
+        const response = await API.interview.createSession(sessionData);
+        currentSessionId = response.sessionId;
+
+        // Fetch the session to get questions
+        await loadSessionQuestions(currentSessionId);
+
+        document.getElementById('questionsSection').classList.remove('d-none');
+        document.getElementById('questionsSection').scrollIntoView({ behavior: 'smooth' });
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-magic me-1"></i>Generate Questions';
+        }
+      } catch (error) {
+        console.error('Error generating questions:', error);
+        showAlert('danger', error.message || 'Failed to generate questions. Please try again.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-magic me-1"></i>Generate Questions';
+        }
+      }
+    }
+
+    async function loadSessionQuestions(sessionId) {
+      try {
+        const session = await API.interview.getSession(sessionId);
+        displayQuestions(session.questions || []);
+      } catch (error) {
+        console.error('Error loading session:', error);
+        // Poll again after a delay if questions are still being generated
+        if (error.message && error.message.includes('404')) {
+          setTimeout(() => loadSessionQuestions(sessionId), 2000);
+        }
+      }
+    }
+
+    function displayQuestions(questions) {
+      const questionsSection = document.getElementById('questionsSection');
+      const questionsContainer = questionsSection.querySelector('.question-item')?.parentElement || questionsSection;
+
+      // Clear existing questions (except the first template)
+      const existingQuestions = questionsContainer.querySelectorAll('.question-item');
+      existingQuestions.forEach((q, index) => {
+        if (index > 0) q.remove();
+      });
+
+      // Update or create question items
+      questions.forEach((question, index) => {
+        let questionItem;
+        if (index === 0 && existingQuestions.length > 0) {
+          questionItem = existingQuestions[0];
+          questionItem.innerHTML = '';
+        } else {
+          questionItem = document.createElement('div');
+          questionItem.className = 'question-item border rounded p-3 mb-3';
+          questionsContainer.insertBefore(questionItem, questionsContainer.querySelector('.progress'));
+        }
+
+        questionItem.innerHTML = `
+          <p><strong>${index + 1}. ${question.questionText}</strong></p>
+          <div class="d-flex gap-2 mb-2">
+            <span class="badge bg-secondary">${question.category || 'General'}</span>
+            <span class="badge bg-info">${question.source || 'AI'}</span>
+          </div>
+          <button class="btn btn-sm btn-outline-primary" onclick="showAnswer(this)"><i class="fas fa-eye me-1"></i>Show Answer</button>
+          <button class="btn btn-sm btn-outline-success" onclick="markAsPracticed(this)"><i class="fas fa-check me-1"></i>Mark as Practiced</button>
+          <div class="answer-content d-none mt-2">
+            <p class="text-muted">Answer guidance will be provided here.</p>
+          </div>
+        `;
+      });
+
+      // Update progress
+      updateProgress(0, questions.length);
+    }
+
+    function updateProgress(practiced, total) {
+      const progressBar = document.querySelector('.progress-bar');
+      const percentage = total > 0 ? (practiced / total) * 100 : 0;
+      if (progressBar) {
+        progressBar.style.width = percentage + '%';
+      }
+      const badges = document.querySelectorAll('.badge.bg-primary, .badge.bg-info');
+      if (badges.length >= 2) {
+        badges[0].textContent = `${practiced}/${total}`;
+        badges[1].textContent = `${Math.round(percentage)}%`;
+      }
+    }
+
+    function showAnswer(btn) {
+      const content = btn.closest('.question-item').querySelector('.answer-content');
+      const visible = !content.classList.contains('d-none');
+      content.classList.toggle('d-none');
+      btn.innerHTML = visible ? '<i class="fas fa-eye me-1"></i>Show Answer' : '<i class="fas fa-eye-slash me-1"></i>Hide Answer';
+    }
+
+    function markAsPracticed(btn) {
+      const item = btn.closest('.question-item');
+      item.classList.add('practiced');
+      btn.innerHTML = '<i class="fas fa-check me-1"></i>Practiced';
+      btn.classList.replace('btn-outline-success', 'btn-success');
+      const all = document.querySelectorAll('.question-item').length;
+      const done = document.querySelectorAll('.question-item.practiced').length;
+      updateProgress(done, all);
+    }
+
+    function startPractice() {
+      alert('Starting practice mode...');
+    }
+
+    function saveCalendarEvent() {
+      const date = document.getElementById('calendarDate').value;
+      const time = document.getElementById('calendarTime').value;
+      if (!date || !time) return alert('Please fill in all fields.');
+      alert(`Interview scheduled on ${date} at ${time}`);
+      const modal = bootstrap.Modal.getInstance(document.getElementById('calendarModal'));
+      modal.hide();
+    }
+  </script>
+</body>
+</html>

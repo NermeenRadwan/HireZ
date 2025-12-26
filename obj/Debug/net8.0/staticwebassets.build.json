@@ -1,0 +1,4245 @@
+{
+  "Version": 1,
+  "Hash": "/wA5snQuBhL+35S4r00xvCQGIovHT0OudGlYyXi0vbE=",
+  "Source": "HireZ",
+  "BasePath": "_content/HireZ",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "HireZ/wwwroot",
+      "Source": "HireZ",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/about.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "about#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7evhc9tyhu",
+      "Integrity": "0aZdY7+0qkWAx5xJDq4gdNles1qOMd0p5FnsCIc1ykI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/about.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-dashboard.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-dashboard#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ge91tj7xpb",
+      "Integrity": "2P5Ga48ENjkC5+gqQ8ci1vpka9ufwptrceU08BPd4/o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-dashboard.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-error.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-error#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1xlpltca0n",
+      "Integrity": "y7svEN//hRCoYYrbdKtE3E3mF1zoKLEauBtNH152EGQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-error.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-feedback.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-feedback#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4cqm4b47lr",
+      "Integrity": "LEEDyv38FialIKwVS89jnOAuZ1bHy8Jc/7/Sw7+vROk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-feedback.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-login.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-login#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0frl239wha",
+      "Integrity": "9MOEiex5CaD/0niNOWoeTxwK7iOhAS9dI/oZimlF7NU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-login.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-script.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-script#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jcft2ks2fq",
+      "Integrity": "Dbt5VuDQ83fIFGmbJP+T0uVq3cG3fSO1BqgPN3MiDj0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-script.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-settings.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-settings#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "80spgyk470",
+      "Integrity": "+I3sDM78QDH59+Q/wijuCBP+9u2TL3cONpI3ivaVjf8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-settings.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-style.css",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-style#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ybj0yy5s3v",
+      "Integrity": "IiTF+BW4acSA8unkKOKMiUkaOLqRN3Y/sHNVJtX6Als=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-style.css"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-users.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "admin/admin-users#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u112sd4x67",
+      "Integrity": "0uFdZ8BHHIVP0OnZV3d1l50J96ms4rK9lr+qVtCOdq0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/admin/admin-users.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats-matcher.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "ats-matcher#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1sewdljvcl",
+      "Integrity": "L1xkCndgclfKOy/X7n2g+qfuv7uDom/a0CWb1387twA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/ats-matcher.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "ats#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vntr4cvmhb",
+      "Integrity": "FY0MM213Ap/9Rb/OnWpinA8c3eZErXn+a/YwC0cfNDY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/ats.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/all.min.css",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "css/all.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2vo1r7e3im",
+      "Integrity": "4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/all.min.css"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/animate.min.css",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "css/animate.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "veeedwg9yo",
+      "Integrity": "idLQKi6B3s6xCbJJnWLqOAqxXgmaPv2uGsvKywdwlk8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/animate.min.css"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/bootstrap.min.css",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "css/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4hq4uve64h",
+      "Integrity": "+IZRbz1B6ee9mUx/ejmonK+ulIP5A5bLDd6v6NHqXnI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/bootstrap.min.css"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/mdb.min.css",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "css/mdb.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cg1zvgenid",
+      "Integrity": "5K5Rl02fY3imDg/A9RpMhcrkWbowhlVlf0Qx/VSrRUE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/mdb.min.css"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/style.css",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "css/style#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qry4zfbs9y",
+      "Integrity": "+icWc0O4+rTs5G962faa3yi/J2KskHR8s98rMA0hdT8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/style.css"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/wow.css",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "css/wow#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1ixn4915l1",
+      "Integrity": "WaFGDfbLRYIE7JkzRf9JZPp+GnfaSrcTflD86ENMHWo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/wow.css"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-builder.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "cv-builder#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xze52leqte",
+      "Integrity": "LfHgM4Bm2d9HYxvmZ0qrAZ8RKyD1RGFY3K1E5GQuRz8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/cv-builder.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-upload.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "cv-upload#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m0fhz6sicc",
+      "Integrity": "RoHfu1ONnx8xigFK+B3qTBCiIzIJuTKSxh9LfY96+JA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/cv-upload.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/dashboard.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "dashboard#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u9shb7oq86",
+      "Integrity": "YhAtSvnr6/EiTRivXIb88bochpkkeb+6gLOrS39JA4Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/dashboard.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/error.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "error#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7kngkspct9",
+      "Integrity": "uRDFSY9RIhSU+ZfDwCSU5nOsHfJF8HzceI0ZQg+fGh4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/error.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/feedback.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "feedback#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "260mkk7ipu",
+      "Integrity": "Wv7v4z5QxC4sVu5gElYRYfA3dfR6mSDsXht7Ud7w/Ek=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/feedback.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/index.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i3elybe3hw",
+      "Integrity": "nkhaGKUKOnwW9qdwNmoIYVhD2hGMjbf7pSkaDJ72c5U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview-prep.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "interview-prep#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fzw6wmzdih",
+      "Integrity": "hWvO4xKsZwa+z4keBMeRHMIk/8Vg0T+YuE1QOVnfiZ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/interview-prep.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "interview#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "50bgkogtx3",
+      "Integrity": "SzAZVu6e9mvkkek1H/McjT70yjKgbHSiKLspapyzU8I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/interview.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interviewDate.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "interviewDate#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "svfu93p670",
+      "Integrity": "6FBhrSS4BMVI8iroj30GmRnw9kFMPL1qn4C8O05dqZc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/interviewDate.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/all.min.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/all.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1each8wvw7",
+      "Integrity": "Z6/mj/QZDUfTjL6nkq7pwkHNZpkVY8Xk8Appn4bTLXs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/all.min.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/api-client.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/api-client#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lkuops8tbd",
+      "Integrity": "O+ZuonDA9n6QDbdnpmA+jy2UBLBY4UBzfKgfe08Ut68=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/api-client.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/auth.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/auth#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kvnpt325nr",
+      "Integrity": "IM5B7PricbMDfrfm/vgOoffDTalev4NELUA/wSlNu/4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/auth.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/bootstrap.min.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/bootstrap.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mz4kc4g3fg",
+      "Integrity": "QjIXq/h3XOotww+h/j4cXiTcNZqA8cN60pqGCUv+gdE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/bootstrap.min.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/jquery.slim.min.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/jquery.slim.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t0knxd0p3j",
+      "Integrity": "4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/jquery.slim.min.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/main.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/main#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "msg5v4wjhc",
+      "Integrity": "RrM6dG/OLnJkdGGbyXpPtVJRlBOAU97oUdatJR/OlK8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/main.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/mdb.umd.min.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/mdb.umd.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d1m1y3qxux",
+      "Integrity": "0VMIc5PVTPwgdQGdzRszaQoupgNvHyzfP4q9tFnA0p4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/mdb.umd.min.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/popper.min.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/popper.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6b3l38dcc2",
+      "Integrity": "/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/popper.min.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/wow.min.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "js/wow.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w6xeadrf4u",
+      "Integrity": "eFKiK3Lq1iz8Shscoyh0s+Ii8jKpkabRQyMTVy9TQTU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/wow.min.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/login.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "login#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f8q7efruq8",
+      "Integrity": "ceU3f1rujO2h1vKL5+QspA4DvrHf5uSzeyNCA3pk7H8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/login.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/profile.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "profile#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mvwyovnmha",
+      "Integrity": "DkFJX1r7VmrPkAI0gfqv0dG7PChKbQ40K++fPyWZWko=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/profile.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/recommendations.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "recommendations#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0hhzakqso6",
+      "Integrity": "NP2kciPSWOlvRpxDzw1/c9kVMAAah6fxPOhJV9PVIzs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/recommendations.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/register.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "register#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kcnv9aihja",
+      "Integrity": "9PijU7rHC85yaG4BHIIOVVfCCMwX7wFciykOtqzyxu8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/register.html"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/sw.js",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "sw#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mwuyk1cn7b",
+      "Integrity": "CnfMqDMwR/vdD4Jcag/k8mmp7k8H+mgz9rW9nHScrcU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/sw.js"
+    },
+    {
+      "Identity": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/upload.html",
+      "SourceId": "HireZ",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/",
+      "BasePath": "_content/HireZ",
+      "RelativePath": "upload#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z7uywy7v9g",
+      "Integrity": "gRpdq91C86nS4TwsUceqHX/79PhM27GATmAo39CS0UY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/upload.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "about.7evhc9tyhu.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/about.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0aZdY7+0qkWAx5xJDq4gdNles1qOMd0p5FnsCIc1ykI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7evhc9tyhu"
+        },
+        {
+          "Name": "label",
+          "Value": "about.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0aZdY7+0qkWAx5xJDq4gdNles1qOMd0p5FnsCIc1ykI="
+        }
+      ]
+    },
+    {
+      "Route": "about.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/about.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0aZdY7+0qkWAx5xJDq4gdNles1qOMd0p5FnsCIc1ykI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0aZdY7+0qkWAx5xJDq4gdNles1qOMd0p5FnsCIc1ykI="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-dashboard.ge91tj7xpb.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-dashboard.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21895"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2P5Ga48ENjkC5+gqQ8ci1vpka9ufwptrceU08BPd4/o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ge91tj7xpb"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-dashboard.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2P5Ga48ENjkC5+gqQ8ci1vpka9ufwptrceU08BPd4/o="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-dashboard.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-dashboard.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21895"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2P5Ga48ENjkC5+gqQ8ci1vpka9ufwptrceU08BPd4/o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2P5Ga48ENjkC5+gqQ8ci1vpka9ufwptrceU08BPd4/o="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-error.1xlpltca0n.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-error.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3386"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y7svEN//hRCoYYrbdKtE3E3mF1zoKLEauBtNH152EGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1xlpltca0n"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-error.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-y7svEN//hRCoYYrbdKtE3E3mF1zoKLEauBtNH152EGQ="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-error.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-error.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3386"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y7svEN//hRCoYYrbdKtE3E3mF1zoKLEauBtNH152EGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-y7svEN//hRCoYYrbdKtE3E3mF1zoKLEauBtNH152EGQ="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-feedback.4cqm4b47lr.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-feedback.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27459"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LEEDyv38FialIKwVS89jnOAuZ1bHy8Jc/7/Sw7+vROk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4cqm4b47lr"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-feedback.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LEEDyv38FialIKwVS89jnOAuZ1bHy8Jc/7/Sw7+vROk="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-feedback.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-feedback.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27459"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LEEDyv38FialIKwVS89jnOAuZ1bHy8Jc/7/Sw7+vROk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LEEDyv38FialIKwVS89jnOAuZ1bHy8Jc/7/Sw7+vROk="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-login.0frl239wha.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4554"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9MOEiex5CaD/0niNOWoeTxwK7iOhAS9dI/oZimlF7NU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0frl239wha"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-login.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9MOEiex5CaD/0niNOWoeTxwK7iOhAS9dI/oZimlF7NU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-login.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4554"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9MOEiex5CaD/0niNOWoeTxwK7iOhAS9dI/oZimlF7NU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9MOEiex5CaD/0niNOWoeTxwK7iOhAS9dI/oZimlF7NU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-script.jcft2ks2fq.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-script.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22145"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dbt5VuDQ83fIFGmbJP+T0uVq3cG3fSO1BqgPN3MiDj0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jcft2ks2fq"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-script.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dbt5VuDQ83fIFGmbJP+T0uVq3cG3fSO1BqgPN3MiDj0="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-script.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-script.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22145"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dbt5VuDQ83fIFGmbJP+T0uVq3cG3fSO1BqgPN3MiDj0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dbt5VuDQ83fIFGmbJP+T0uVq3cG3fSO1BqgPN3MiDj0="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-settings.80spgyk470.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-settings.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46224"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+I3sDM78QDH59+Q/wijuCBP+9u2TL3cONpI3ivaVjf8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "80spgyk470"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-settings.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+I3sDM78QDH59+Q/wijuCBP+9u2TL3cONpI3ivaVjf8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-settings.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-settings.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46224"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+I3sDM78QDH59+Q/wijuCBP+9u2TL3cONpI3ivaVjf8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+I3sDM78QDH59+Q/wijuCBP+9u2TL3cONpI3ivaVjf8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-style.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13937"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IiTF+BW4acSA8unkKOKMiUkaOLqRN3Y/sHNVJtX6Als=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IiTF+BW4acSA8unkKOKMiUkaOLqRN3Y/sHNVJtX6Als="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-style.ybj0yy5s3v.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13937"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IiTF+BW4acSA8unkKOKMiUkaOLqRN3Y/sHNVJtX6Als=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ybj0yy5s3v"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-style.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IiTF+BW4acSA8unkKOKMiUkaOLqRN3Y/sHNVJtX6Als="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-users.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-users.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25572"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0uFdZ8BHHIVP0OnZV3d1l50J96ms4rK9lr+qVtCOdq0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0uFdZ8BHHIVP0OnZV3d1l50J96ms4rK9lr+qVtCOdq0="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-users.u112sd4x67.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/admin/admin-users.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25572"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0uFdZ8BHHIVP0OnZV3d1l50J96ms4rK9lr+qVtCOdq0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u112sd4x67"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-users.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0uFdZ8BHHIVP0OnZV3d1l50J96ms4rK9lr+qVtCOdq0="
+        }
+      ]
+    },
+    {
+      "Route": "ats-matcher.1sewdljvcl.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats-matcher.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35473"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L1xkCndgclfKOy/X7n2g+qfuv7uDom/a0CWb1387twA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1sewdljvcl"
+        },
+        {
+          "Name": "label",
+          "Value": "ats-matcher.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-L1xkCndgclfKOy/X7n2g+qfuv7uDom/a0CWb1387twA="
+        }
+      ]
+    },
+    {
+      "Route": "ats-matcher.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats-matcher.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35473"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L1xkCndgclfKOy/X7n2g+qfuv7uDom/a0CWb1387twA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-L1xkCndgclfKOy/X7n2g+qfuv7uDom/a0CWb1387twA="
+        }
+      ]
+    },
+    {
+      "Route": "ats.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5568"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FY0MM213Ap/9Rb/OnWpinA8c3eZErXn+a/YwC0cfNDY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FY0MM213Ap/9Rb/OnWpinA8c3eZErXn+a/YwC0cfNDY="
+        }
+      ]
+    },
+    {
+      "Route": "ats.vntr4cvmhb.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/ats.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5568"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FY0MM213Ap/9Rb/OnWpinA8c3eZErXn+a/YwC0cfNDY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vntr4cvmhb"
+        },
+        {
+          "Name": "label",
+          "Value": "ats.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FY0MM213Ap/9Rb/OnWpinA8c3eZErXn+a/YwC0cfNDY="
+        }
+      ]
+    },
+    {
+      "Route": "css/all.min.2vo1r7e3im.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/all.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74320"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2vo1r7e3im"
+        },
+        {
+          "Name": "label",
+          "Value": "css/all.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4="
+        }
+      ]
+    },
+    {
+      "Route": "css/all.min.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/all.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74320"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4rTIfo5GQTi/7UJqoyUJQKzxW8VN/YBH31+Cy+vTZj4="
+        }
+      ]
+    },
+    {
+      "Route": "css/animate.min.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/animate.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"idLQKi6B3s6xCbJJnWLqOAqxXgmaPv2uGsvKywdwlk8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-idLQKi6B3s6xCbJJnWLqOAqxXgmaPv2uGsvKywdwlk8="
+        }
+      ]
+    },
+    {
+      "Route": "css/animate.min.veeedwg9yo.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/animate.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"idLQKi6B3s6xCbJJnWLqOAqxXgmaPv2uGsvKywdwlk8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "veeedwg9yo"
+        },
+        {
+          "Name": "label",
+          "Value": "css/animate.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-idLQKi6B3s6xCbJJnWLqOAqxXgmaPv2uGsvKywdwlk8="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.4hq4uve64h.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162264"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+IZRbz1B6ee9mUx/ejmonK+ulIP5A5bLDd6v6NHqXnI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4hq4uve64h"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+IZRbz1B6ee9mUx/ejmonK+ulIP5A5bLDd6v6NHqXnI="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap.min.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162264"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+IZRbz1B6ee9mUx/ejmonK+ulIP5A5bLDd6v6NHqXnI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+IZRbz1B6ee9mUx/ejmonK+ulIP5A5bLDd6v6NHqXnI="
+        }
+      ]
+    },
+    {
+      "Route": "css/mdb.min.cg1zvgenid.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/mdb.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "380016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5K5Rl02fY3imDg/A9RpMhcrkWbowhlVlf0Qx/VSrRUE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cg1zvgenid"
+        },
+        {
+          "Name": "label",
+          "Value": "css/mdb.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5K5Rl02fY3imDg/A9RpMhcrkWbowhlVlf0Qx/VSrRUE="
+        }
+      ]
+    },
+    {
+      "Route": "css/mdb.min.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/mdb.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "380016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5K5Rl02fY3imDg/A9RpMhcrkWbowhlVlf0Qx/VSrRUE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5K5Rl02fY3imDg/A9RpMhcrkWbowhlVlf0Qx/VSrRUE="
+        }
+      ]
+    },
+    {
+      "Route": "css/style.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25264"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+icWc0O4+rTs5G962faa3yi/J2KskHR8s98rMA0hdT8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+icWc0O4+rTs5G962faa3yi/J2KskHR8s98rMA0hdT8="
+        }
+      ]
+    },
+    {
+      "Route": "css/style.qry4zfbs9y.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25264"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+icWc0O4+rTs5G962faa3yi/J2KskHR8s98rMA0hdT8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qry4zfbs9y"
+        },
+        {
+          "Name": "label",
+          "Value": "css/style.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+icWc0O4+rTs5G962faa3yi/J2KskHR8s98rMA0hdT8="
+        }
+      ]
+    },
+    {
+      "Route": "css/wow.1ixn4915l1.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/wow.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57095"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WaFGDfbLRYIE7JkzRf9JZPp+GnfaSrcTflD86ENMHWo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1ixn4915l1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/wow.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WaFGDfbLRYIE7JkzRf9JZPp+GnfaSrcTflD86ENMHWo="
+        }
+      ]
+    },
+    {
+      "Route": "css/wow.css",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/css/wow.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57095"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WaFGDfbLRYIE7JkzRf9JZPp+GnfaSrcTflD86ENMHWo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WaFGDfbLRYIE7JkzRf9JZPp+GnfaSrcTflD86ENMHWo="
+        }
+      ]
+    },
+    {
+      "Route": "cv-builder.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-builder.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45404"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LfHgM4Bm2d9HYxvmZ0qrAZ8RKyD1RGFY3K1E5GQuRz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LfHgM4Bm2d9HYxvmZ0qrAZ8RKyD1RGFY3K1E5GQuRz8="
+        }
+      ]
+    },
+    {
+      "Route": "cv-builder.xze52leqte.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-builder.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45404"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LfHgM4Bm2d9HYxvmZ0qrAZ8RKyD1RGFY3K1E5GQuRz8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xze52leqte"
+        },
+        {
+          "Name": "label",
+          "Value": "cv-builder.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LfHgM4Bm2d9HYxvmZ0qrAZ8RKyD1RGFY3K1E5GQuRz8="
+        }
+      ]
+    },
+    {
+      "Route": "cv-upload.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-upload.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21389"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RoHfu1ONnx8xigFK+B3qTBCiIzIJuTKSxh9LfY96+JA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RoHfu1ONnx8xigFK+B3qTBCiIzIJuTKSxh9LfY96+JA="
+        }
+      ]
+    },
+    {
+      "Route": "cv-upload.m0fhz6sicc.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/cv-upload.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21389"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RoHfu1ONnx8xigFK+B3qTBCiIzIJuTKSxh9LfY96+JA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m0fhz6sicc"
+        },
+        {
+          "Name": "label",
+          "Value": "cv-upload.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RoHfu1ONnx8xigFK+B3qTBCiIzIJuTKSxh9LfY96+JA="
+        }
+      ]
+    },
+    {
+      "Route": "dashboard.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/dashboard.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18780"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YhAtSvnr6/EiTRivXIb88bochpkkeb+6gLOrS39JA4Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YhAtSvnr6/EiTRivXIb88bochpkkeb+6gLOrS39JA4Y="
+        }
+      ]
+    },
+    {
+      "Route": "dashboard.u9shb7oq86.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/dashboard.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18780"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YhAtSvnr6/EiTRivXIb88bochpkkeb+6gLOrS39JA4Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u9shb7oq86"
+        },
+        {
+          "Name": "label",
+          "Value": "dashboard.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YhAtSvnr6/EiTRivXIb88bochpkkeb+6gLOrS39JA4Y="
+        }
+      ]
+    },
+    {
+      "Route": "error.7kngkspct9.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/error.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3171"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uRDFSY9RIhSU+ZfDwCSU5nOsHfJF8HzceI0ZQg+fGh4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7kngkspct9"
+        },
+        {
+          "Name": "label",
+          "Value": "error.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uRDFSY9RIhSU+ZfDwCSU5nOsHfJF8HzceI0ZQg+fGh4="
+        }
+      ]
+    },
+    {
+      "Route": "error.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/error.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3171"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uRDFSY9RIhSU+ZfDwCSU5nOsHfJF8HzceI0ZQg+fGh4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uRDFSY9RIhSU+ZfDwCSU5nOsHfJF8HzceI0ZQg+fGh4="
+        }
+      ]
+    },
+    {
+      "Route": "feedback.260mkk7ipu.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/feedback.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33567"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Wv7v4z5QxC4sVu5gElYRYfA3dfR6mSDsXht7Ud7w/Ek=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "260mkk7ipu"
+        },
+        {
+          "Name": "label",
+          "Value": "feedback.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Wv7v4z5QxC4sVu5gElYRYfA3dfR6mSDsXht7Ud7w/Ek="
+        }
+      ]
+    },
+    {
+      "Route": "feedback.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/feedback.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33567"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Wv7v4z5QxC4sVu5gElYRYfA3dfR6mSDsXht7Ud7w/Ek=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Wv7v4z5QxC4sVu5gElYRYfA3dfR6mSDsXht7Ud7w/Ek="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9851"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nkhaGKUKOnwW9qdwNmoIYVhD2hGMjbf7pSkaDJ72c5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nkhaGKUKOnwW9qdwNmoIYVhD2hGMjbf7pSkaDJ72c5U="
+        }
+      ]
+    },
+    {
+      "Route": "index.i3elybe3hw.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9851"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nkhaGKUKOnwW9qdwNmoIYVhD2hGMjbf7pSkaDJ72c5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i3elybe3hw"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nkhaGKUKOnwW9qdwNmoIYVhD2hGMjbf7pSkaDJ72c5U="
+        }
+      ]
+    },
+    {
+      "Route": "interview-prep.fzw6wmzdih.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview-prep.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16800"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hWvO4xKsZwa+z4keBMeRHMIk/8Vg0T+YuE1QOVnfiZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fzw6wmzdih"
+        },
+        {
+          "Name": "label",
+          "Value": "interview-prep.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hWvO4xKsZwa+z4keBMeRHMIk/8Vg0T+YuE1QOVnfiZ0="
+        }
+      ]
+    },
+    {
+      "Route": "interview-prep.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview-prep.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16800"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hWvO4xKsZwa+z4keBMeRHMIk/8Vg0T+YuE1QOVnfiZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hWvO4xKsZwa+z4keBMeRHMIk/8Vg0T+YuE1QOVnfiZ0="
+        }
+      ]
+    },
+    {
+      "Route": "interview.50bgkogtx3.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8955"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SzAZVu6e9mvkkek1H/McjT70yjKgbHSiKLspapyzU8I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "50bgkogtx3"
+        },
+        {
+          "Name": "label",
+          "Value": "interview.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SzAZVu6e9mvkkek1H/McjT70yjKgbHSiKLspapyzU8I="
+        }
+      ]
+    },
+    {
+      "Route": "interview.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interview.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8955"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SzAZVu6e9mvkkek1H/McjT70yjKgbHSiKLspapyzU8I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SzAZVu6e9mvkkek1H/McjT70yjKgbHSiKLspapyzU8I="
+        }
+      ]
+    },
+    {
+      "Route": "interviewDate.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interviewDate.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10582"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6FBhrSS4BMVI8iroj30GmRnw9kFMPL1qn4C8O05dqZc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6FBhrSS4BMVI8iroj30GmRnw9kFMPL1qn4C8O05dqZc="
+        }
+      ]
+    },
+    {
+      "Route": "interviewDate.svfu93p670.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/interviewDate.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10582"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6FBhrSS4BMVI8iroj30GmRnw9kFMPL1qn4C8O05dqZc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "svfu93p670"
+        },
+        {
+          "Name": "label",
+          "Value": "interviewDate.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6FBhrSS4BMVI8iroj30GmRnw9kFMPL1qn4C8O05dqZc="
+        }
+      ]
+    },
+    {
+      "Route": "js/all.min.1each8wvw7.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/all.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1505880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z6/mj/QZDUfTjL6nkq7pwkHNZpkVY8Xk8Appn4bTLXs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1each8wvw7"
+        },
+        {
+          "Name": "label",
+          "Value": "js/all.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z6/mj/QZDUfTjL6nkq7pwkHNZpkVY8Xk8Appn4bTLXs="
+        }
+      ]
+    },
+    {
+      "Route": "js/all.min.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/all.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1505880"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z6/mj/QZDUfTjL6nkq7pwkHNZpkVY8Xk8Appn4bTLXs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z6/mj/QZDUfTjL6nkq7pwkHNZpkVY8Xk8Appn4bTLXs="
+        }
+      ]
+    },
+    {
+      "Route": "js/api-client.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/api-client.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O+ZuonDA9n6QDbdnpmA+jy2UBLBY4UBzfKgfe08Ut68=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-O+ZuonDA9n6QDbdnpmA+jy2UBLBY4UBzfKgfe08Ut68="
+        }
+      ]
+    },
+    {
+      "Route": "js/api-client.lkuops8tbd.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/api-client.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O+ZuonDA9n6QDbdnpmA+jy2UBLBY4UBzfKgfe08Ut68=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lkuops8tbd"
+        },
+        {
+          "Name": "label",
+          "Value": "js/api-client.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O+ZuonDA9n6QDbdnpmA+jy2UBLBY4UBzfKgfe08Ut68="
+        }
+      ]
+    },
+    {
+      "Route": "js/auth.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/auth.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IM5B7PricbMDfrfm/vgOoffDTalev4NELUA/wSlNu/4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IM5B7PricbMDfrfm/vgOoffDTalev4NELUA/wSlNu/4="
+        }
+      ]
+    },
+    {
+      "Route": "js/auth.kvnpt325nr.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/auth.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IM5B7PricbMDfrfm/vgOoffDTalev4NELUA/wSlNu/4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kvnpt325nr"
+        },
+        {
+          "Name": "label",
+          "Value": "js/auth.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IM5B7PricbMDfrfm/vgOoffDTalev4NELUA/wSlNu/4="
+        }
+      ]
+    },
+    {
+      "Route": "js/bootstrap.min.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/bootstrap.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "62563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QjIXq/h3XOotww+h/j4cXiTcNZqA8cN60pqGCUv+gdE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QjIXq/h3XOotww+h/j4cXiTcNZqA8cN60pqGCUv+gdE="
+        }
+      ]
+    },
+    {
+      "Route": "js/bootstrap.min.mz4kc4g3fg.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/bootstrap.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "62563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QjIXq/h3XOotww+h/j4cXiTcNZqA8cN60pqGCUv+gdE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mz4kc4g3fg"
+        },
+        {
+          "Name": "label",
+          "Value": "js/bootstrap.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QjIXq/h3XOotww+h/j4cXiTcNZqA8cN60pqGCUv+gdE="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.slim.min.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/jquery.slim.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72380"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.slim.min.t0knxd0p3j.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/jquery.slim.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72380"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t0knxd0p3j"
+        },
+        {
+          "Name": "label",
+          "Value": "js/jquery.slim.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        }
+      ]
+    },
+    {
+      "Route": "js/main.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/main.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RrM6dG/OLnJkdGGbyXpPtVJRlBOAU97oUdatJR/OlK8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RrM6dG/OLnJkdGGbyXpPtVJRlBOAU97oUdatJR/OlK8="
+        }
+      ]
+    },
+    {
+      "Route": "js/main.msg5v4wjhc.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/main.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RrM6dG/OLnJkdGGbyXpPtVJRlBOAU97oUdatJR/OlK8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "msg5v4wjhc"
+        },
+        {
+          "Name": "label",
+          "Value": "js/main.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RrM6dG/OLnJkdGGbyXpPtVJRlBOAU97oUdatJR/OlK8="
+        }
+      ]
+    },
+    {
+      "Route": "js/mdb.umd.min.d1m1y3qxux.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/mdb.umd.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "125122"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0VMIc5PVTPwgdQGdzRszaQoupgNvHyzfP4q9tFnA0p4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d1m1y3qxux"
+        },
+        {
+          "Name": "label",
+          "Value": "js/mdb.umd.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0VMIc5PVTPwgdQGdzRszaQoupgNvHyzfP4q9tFnA0p4="
+        }
+      ]
+    },
+    {
+      "Route": "js/mdb.umd.min.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/mdb.umd.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "125122"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0VMIc5PVTPwgdQGdzRszaQoupgNvHyzfP4q9tFnA0p4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0VMIc5PVTPwgdQGdzRszaQoupgNvHyzfP4q9tFnA0p4="
+        }
+      ]
+    },
+    {
+      "Route": "js/popper.min.6b3l38dcc2.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/popper.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21233"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6b3l38dcc2"
+        },
+        {
+          "Name": "label",
+          "Value": "js/popper.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8="
+        }
+      ]
+    },
+    {
+      "Route": "js/popper.min.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/popper.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21233"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8="
+        }
+      ]
+    },
+    {
+      "Route": "js/wow.min.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/wow.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eFKiK3Lq1iz8Shscoyh0s+Ii8jKpkabRQyMTVy9TQTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eFKiK3Lq1iz8Shscoyh0s+Ii8jKpkabRQyMTVy9TQTU="
+        }
+      ]
+    },
+    {
+      "Route": "js/wow.min.w6xeadrf4u.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/js/wow.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eFKiK3Lq1iz8Shscoyh0s+Ii8jKpkabRQyMTVy9TQTU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w6xeadrf4u"
+        },
+        {
+          "Name": "label",
+          "Value": "js/wow.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eFKiK3Lq1iz8Shscoyh0s+Ii8jKpkabRQyMTVy9TQTU="
+        }
+      ]
+    },
+    {
+      "Route": "login.f8q7efruq8.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4234"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ceU3f1rujO2h1vKL5+QspA4DvrHf5uSzeyNCA3pk7H8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f8q7efruq8"
+        },
+        {
+          "Name": "label",
+          "Value": "login.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ceU3f1rujO2h1vKL5+QspA4DvrHf5uSzeyNCA3pk7H8="
+        }
+      ]
+    },
+    {
+      "Route": "login.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4234"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ceU3f1rujO2h1vKL5+QspA4DvrHf5uSzeyNCA3pk7H8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ceU3f1rujO2h1vKL5+QspA4DvrHf5uSzeyNCA3pk7H8="
+        }
+      ]
+    },
+    {
+      "Route": "profile.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/profile.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21474"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DkFJX1r7VmrPkAI0gfqv0dG7PChKbQ40K++fPyWZWko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DkFJX1r7VmrPkAI0gfqv0dG7PChKbQ40K++fPyWZWko="
+        }
+      ]
+    },
+    {
+      "Route": "profile.mvwyovnmha.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/profile.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21474"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DkFJX1r7VmrPkAI0gfqv0dG7PChKbQ40K++fPyWZWko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mvwyovnmha"
+        },
+        {
+          "Name": "label",
+          "Value": "profile.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DkFJX1r7VmrPkAI0gfqv0dG7PChKbQ40K++fPyWZWko="
+        }
+      ]
+    },
+    {
+      "Route": "recommendations.0hhzakqso6.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/recommendations.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NP2kciPSWOlvRpxDzw1/c9kVMAAah6fxPOhJV9PVIzs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0hhzakqso6"
+        },
+        {
+          "Name": "label",
+          "Value": "recommendations.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NP2kciPSWOlvRpxDzw1/c9kVMAAah6fxPOhJV9PVIzs="
+        }
+      ]
+    },
+    {
+      "Route": "recommendations.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/recommendations.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NP2kciPSWOlvRpxDzw1/c9kVMAAah6fxPOhJV9PVIzs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NP2kciPSWOlvRpxDzw1/c9kVMAAah6fxPOhJV9PVIzs="
+        }
+      ]
+    },
+    {
+      "Route": "register.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/register.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8355"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9PijU7rHC85yaG4BHIIOVVfCCMwX7wFciykOtqzyxu8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9PijU7rHC85yaG4BHIIOVVfCCMwX7wFciykOtqzyxu8="
+        }
+      ]
+    },
+    {
+      "Route": "register.kcnv9aihja.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/register.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8355"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9PijU7rHC85yaG4BHIIOVVfCCMwX7wFciykOtqzyxu8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kcnv9aihja"
+        },
+        {
+          "Name": "label",
+          "Value": "register.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9PijU7rHC85yaG4BHIIOVVfCCMwX7wFciykOtqzyxu8="
+        }
+      ]
+    },
+    {
+      "Route": "sw.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/sw.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1798"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CnfMqDMwR/vdD4Jcag/k8mmp7k8H+mgz9rW9nHScrcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CnfMqDMwR/vdD4Jcag/k8mmp7k8H+mgz9rW9nHScrcU="
+        }
+      ]
+    },
+    {
+      "Route": "sw.mwuyk1cn7b.js",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/sw.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1798"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CnfMqDMwR/vdD4Jcag/k8mmp7k8H+mgz9rW9nHScrcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mwuyk1cn7b"
+        },
+        {
+          "Name": "label",
+          "Value": "sw.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CnfMqDMwR/vdD4Jcag/k8mmp7k8H+mgz9rW9nHScrcU="
+        }
+      ]
+    },
+    {
+      "Route": "upload.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/upload.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20640"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gRpdq91C86nS4TwsUceqHX/79PhM27GATmAo39CS0UY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gRpdq91C86nS4TwsUceqHX/79PhM27GATmAo39CS0UY="
+        }
+      ]
+    },
+    {
+      "Route": "upload.z7uywy7v9g.html",
+      "AssetFile": "/Users/nermeenradwan/Downloads/HireZ-Desouky 2/wwwroot/upload.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20640"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gRpdq91C86nS4TwsUceqHX/79PhM27GATmAo39CS0UY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 26 Dec 2025 02:23:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z7uywy7v9g"
+        },
+        {
+          "Name": "label",
+          "Value": "upload.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gRpdq91C86nS4TwsUceqHX/79PhM27GATmAo39CS0UY="
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - HireZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="dashboard.html">
+                <i class="fas fa-users me-2"></i>HireZ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-upload.html">
+                            <i class="fas fa-upload me-1"></i>Upload CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-builder.html">
+                            <i class="fas fa-edit me-1"></i>Build CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ats-matcher.html">
+                            <i class="fas fa-search me-1"></i>ATS Matcher
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interview-prep.html">
+                            <i class="fas fa-question-circle me-1"></i>Interview Prep
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommendations.html">
+                            <i class="fas fa-star me-1"></i>Recommendations
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="feedback.html"><i class="fas fa-comments me-2"></i>Feedback</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid" style="margin-top: 76px;">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="sidebar-content">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv-upload.html">
+                                <i class="fas fa-upload me-2"></i>Upload CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv-builder.html">
+                                <i class="fas fa-edit me-2"></i>Build CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ats-matcher.html">
+                                <i class="fas fa-search me-2"></i>ATS Matcher
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="interview-prep.html">
+                                <i class="fas fa-question-circle me-2"></i>Interview Prep
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recommendations.html">
+                                <i class="fas fa-star me-2"></i>Recommendations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <div class="container-fluid py-4">
+                    <!-- Page Header -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="h3 mb-1">Feedback & Reviews</h1>
+                            <p class="text-muted">Collect and manage feedback from interviews and candidate interactions</p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary me-2">
+                                <i class="fas fa-plus me-2"></i>New Feedback
+                            </button>
+                            <button class="btn btn-outline-primary">
+                                <i class="fas fa-download me-2"></i>Export
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Stats -->
+                    <div class="row mb-4">
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-primary">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="stat-number">47</h3>
+                                    <p class="stat-label">Total Feedback</p>
+                                    <small class="text-info">
+                                        <i class="fas fa-arrow-up me-1"></i>+12% this month
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-success">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="stat-number">4.8</h3>
+                                    <p class="stat-label">Avg Rating</p>
+                                    <small class="text-success">
+                                        <i class="fas fa-arrow-up me-1"></i>+0.3 this month
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-warning">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="stat-number">8</h3>
+                                    <p class="stat-label">Pending Review</p>
+                                    <small class="text-warning">
+                                        <i class="fas fa-exclamation me-1"></i>Needs attention
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-info">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="stat-number">89%</h3>
+                                    <p class="stat-label">Positive</p>
+                                    <small class="text-info">
+                                        <i class="fas fa-chart-line me-1"></i>Feedback quality
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Forms -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-edit me-2"></i>Submit Feedback
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <form id="feedbackForm">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="candidateSelect" class="form-label">Candidate</label>
+                                                <select class="form-select" id="candidateSelect" required>
+                                                    <option value="">Select a candidate</option>
+                                                    <option value="sarah-johnson">Sarah Johnson</option>
+                                                    <option value="mike-chen">Mike Chen</option>
+                                                    <option value="emily-davis">Emily Davis</option>
+                                                    <option value="alex-rodriguez">Alex Rodriguez</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="interviewType" class="form-label">Interview Type</label>
+                                                <select class="form-select" id="interviewType" required>
+                                                    <option value="">Select type</option>
+                                                    <option value="technical">Technical Interview</option>
+                                                    <option value="behavioral">Behavioral Interview</option>
+                                                    <option value="cultural">Cultural Fit</option>
+                                                    <option value="final">Final Interview</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="overallRating" class="form-label">Overall Rating</label>
+                                            <div class="rating-input">
+                                                <input type="radio" name="rating" value="1" id="star1">
+                                                <label for="star1"><i class="fas fa-star"></i></label>
+                                                <input type="radio" name="rating" value="2" id="star2">
+                                                <label for="star2"><i class="fas fa-star"></i></label>
+                                                <input type="radio" name="rating" value="3" id="star3">
+                                                <label for="star3"><i class="fas fa-star"></i></label>
+                                                <input type="radio" name="rating" value="4" id="star4">
+                                                <label for="star4"><i class="fas fa-star"></i></label>
+                                                <input type="radio" name="rating" value="5" id="star5">
+                                                <label for="star5"><i class="fas fa-star"></i></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="technicalSkills" class="form-label">Technical Skills</label>
+                                                <select class="form-select" id="technicalSkills">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good">Good</option>
+                                                    <option value="average">Average</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="communication" class="form-label">Communication</label>
+                                                <select class="form-select" id="communication">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good">Good</option>
+                                                    <option value="average">Average</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="problemSolving" class="form-label">Problem Solving</label>
+                                                <select class="form-select" id="problemSolving">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good">Good</option>
+                                                    <option value="average">Average</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="culturalFit" class="form-label">Cultural Fit</label>
+                                                <select class="form-select" id="culturalFit">
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good">Good</option>
+                                                    <option value="average">Average</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="feedbackComments" class="form-label">Detailed Feedback</label>
+                                            <textarea class="form-control" id="feedbackComments" rows="4" placeholder="Provide detailed feedback about the candidate's performance, strengths, areas for improvement, and overall recommendation..."></textarea>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recommendation" class="form-label">Recommendation</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="recommendation" id="hire" value="hire">
+                                                <label class="form-check-label" for="hire">
+                                                    <i class="fas fa-thumbs-up text-success me-2"></i>Hire
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="recommendation" id="maybe" value="maybe">
+                                                <label class="form-check-label" for="maybe">
+                                                    <i class="fas fa-question text-warning me-2"></i>Maybe
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="recommendation" id="no-hire" value="no-hire">
+                                                <label class="form-check-label" for="no-hire">
+                                                    <i class="fas fa-thumbs-down text-danger me-2"></i>No Hire
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end gap-2">
+                                            <button type="button" class="btn btn-outline-secondary">Save Draft</button>
+                                            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feedback Summary -->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-chart-pie me-2"></i>Feedback Summary
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="feedback-summary">
+                                        <div class="summary-item">
+                                            <div class="summary-label">Overall Rating</div>
+                                            <div class="summary-value">
+                                                <div class="rating-display">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <span class="ms-2">4.8/5</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="summary-item">
+                                            <div class="summary-label">Hire Rate</div>
+                                            <div class="summary-value">
+                                                <div class="progress" style="height: 8px;">
+                                                    <div class="progress-bar bg-success" style="width: 75%"></div>
+                                                </div>
+                                                <small class="text-muted">75%</small>
+                                            </div>
+                                        </div>
+                                        <div class="summary-item">
+                                            <div class="summary-label">Response Rate</div>
+                                            <div class="summary-value">
+                                                <div class="progress" style="height: 8px;">
+                                                    <div class="progress-bar bg-info" style="width: 89%"></div>
+                                                </div>
+                                                <small class="text-muted">89%</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Feedback -->
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-clock me-2"></i>Recent Feedback
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="recent-feedback">
+                                        <div class="feedback-item">
+                                            <div class="feedback-header">
+                                                <h6 class="mb-1">Sarah Johnson</h6>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </div>
+                                            </div>
+                                            <p class="text-muted mb-1">Excellent technical skills and communication</p>
+                                            <small class="text-muted">2 hours ago</small>
+                                        </div>
+                                        <div class="feedback-item">
+                                            <div class="feedback-header">
+                                                <h6 class="mb-1">Mike Chen</h6>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="far fa-star text-muted"></i>
+                                                </div>
+                                            </div>
+                                            <p class="text-muted mb-1">Strong leadership potential</p>
+                                            <small class="text-muted">1 day ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback History -->
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-history me-2"></i>Feedback History
+                            </h5>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-filter me-1"></i>Filter
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-sort me-1"></i>Sort
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Candidate</th>
+                                            <th>Interview Type</th>
+                                            <th>Rating</th>
+                                            <th>Recommendation</th>
+                                            <th>Date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="feedbackHistory">
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="candidate-avatar me-3">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Sarah Johnson</h6>
+                                                        <p class="text-muted mb-0">Software Engineer</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Alex Smith</td>
+                                            <td><span class="badge bg-primary">Technical</span></td>
+                                            <td>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <span class="ms-1">5.0</span>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-success">Hire</span></td>
+                                            <td>Dec 15, 2024</td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-primary" title="View Details">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-success" title="Edit">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger" title="Delete">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="candidate-avatar me-3">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Mike Chen</h6>
+                                                        <p class="text-muted mb-0">Product Manager</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Lisa Wang</td>
+                                            <td><span class="badge bg-info">Behavioral</span></td>
+                                            <td>
+                                                <div class="rating">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="far fa-star text-muted"></i>
+                                                    <span class="ms-1">4.0</span>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-warning">Maybe</span></td>
+                                            <td>Dec 14, 2024</td>
+                                            <td>
+                                                <div class="btn-group btn-group-sm">
+                                                    <button class="btn btn-outline-primary" title="View Details">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-success" title="Edit">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger" title="Delete">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

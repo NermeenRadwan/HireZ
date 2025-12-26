@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CV - HireZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="dashboard.html">
+                <i class="fas fa-users me-2"></i>HireZ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-upload.html">
+                            <i class="fas fa-upload me-1"></i>Upload CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-builder.html">
+                            <i class="fas fa-edit me-1"></i>Build CV
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ats-matcher.html">
+                            <i class="fas fa-search me-1"></i>ATS Matcher
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interview-prep.html">
+                            <i class="fas fa-question-circle me-1"></i>Interview Prep
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommendations.html">
+                            <i class="fas fa-star me-1"></i>Recommendations
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="feedback.html"><i class="fas fa-comments me-2"></i>Feedback</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid" style="margin-top: 76px;">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="sidebar-content">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="cv-upload.html">
+                                <i class="fas fa-upload me-2"></i>Upload CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cv-builder.html">
+                                <i class="fas fa-edit me-2"></i>Build CV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ats-matcher.html">
+                                <i class="fas fa-search me-2"></i>ATS Matcher
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="interview-prep.html">
+                                <i class="fas fa-question-circle me-2"></i>Interview Prep
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recommendations.html">
+                                <i class="fas fa-star me-2"></i>Recommendations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <div class="container-fluid py-4">
+                    <!-- Page Header -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="h3 mb-1">Upload Your CV</h1>
+                            <p class="text-muted">Upload your resume to get started with our AI-powered matching system.</p>
+                        </div>
+                    </div>
+
+                    <!-- Upload Section -->
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-upload me-2"></i>Upload Resume
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <!-- File Upload Area -->
+                                    <div class="upload-area" id="uploadArea">
+                                        <div class="upload-content text-center">
+                                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                            <h4 class="mt-3">Drag & Drop your resume here</h4>
+                                            <p class="text-muted">or click to browse files</p>
+                                            <input type="file" id="fileInput" class="d-none" accept=".pdf,.doc,.docx,.txt">
+                                            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                                                <i class="fas fa-folder-open me-2"></i>Choose File
+                                            </button>
+                                            <div class="mt-3">
+                                                <small class="text-muted">
+                                                    Supported formats: PDF, DOC, DOCX, TXT (Max 10MB)
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- File Preview -->
+                                    <div class="file-preview d-none" id="filePreview">
+                                        <div class="d-flex align-items-center p-3 bg-light rounded">
+                                            <i class="fas fa-file-pdf text-danger me-3 fs-4"></i>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1" id="fileName">resume.pdf</h6>
+                                                <small class="text-muted" id="fileSize">2.3 MB</small>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-danger" onclick="removeFile()">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Upload Progress -->
+                                    <div class="upload-progress d-none" id="uploadProgress">
+                                        <div class="progress mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 0%" id="progressBar"></div>
+                                        </div>
+                                        <p class="text-center mb-0">Uploading your resume...</p>
+                                    </div>
+
+                                    <!-- Upload Success -->
+                                    <div class="upload-success d-none" id="uploadSuccess">
+                                        <div class="alert alert-success d-flex align-items-center">
+                                            <i class="fas fa-check-circle me-3 fs-4"></i>
+                                            <div>
+                                                <h6 class="mb-1">Upload Successful!</h6>
+                                                <p class="mb-0">Your resume has been processed and is ready for analysis.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Resume Analysis -->
+                            <div class="card mt-4 d-none" id="analysisCard">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-chart-line me-2"></i>Resume Analysis
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>Extracted Information</h6>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fas fa-user text-primary me-2"></i><strong>Name:</strong> <span id="extractedName">John Doe</span></li>
+                                                <li><i class="fas fa-envelope text-primary me-2"></i><strong>Email:</strong> <span id="extractedEmail">john@example.com</span></li>
+                                                <li><i class="fas fa-phone text-primary me-2"></i><strong>Phone:</strong> <span id="extractedPhone">+1 (555) 123-4567</span></li>
+                                                <li><i class="fas fa-map-marker-alt text-primary me-2"></i><strong>Location:</strong> <span id="extractedLocation">New York, NY</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Skills Detected</h6>
+                                            <div class="skills-tags">
+                                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                                <span class="badge bg-primary me-2 mb-2">React</span>
+                                                <span class="badge bg-primary me-2 mb-2">Node.js</span>
+                                                <span class="badge bg-primary me-2 mb-2">Python</span>
+                                                <span class="badge bg-primary me-2 mb-2">SQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="btn btn-success" onclick="proceedToATS()">
+                                            <i class="fas fa-arrow-right me-2"></i>Proceed to ATS Matching
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <!-- Tips Card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-lightbulb me-2"></i>Upload Tips
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Use clear formatting</strong><br>
+                                            <small class="text-muted">Avoid complex layouts and graphics</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Include keywords</strong><br>
+                                            <small class="text-muted">Use industry-specific terms and skills</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Keep it updated</strong><br>
+                                            <small class="text-muted">Include your latest experience and skills</small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fas fa-check text-success me-2"></i>
+                                            <strong>Use standard sections</strong><br>
+                                            <small class="text-muted">Experience, Education, Skills, Contact</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Recent Uploads -->
+                            <div class="card mt-4">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                        <i class="fas fa-history me-2"></i>Recent Uploads
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="recent-upload">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fas fa-file-pdf text-danger me-3"></i>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1">resume_v2.pdf</h6>
+                                                <small class="text-muted">Uploaded 2 days ago</small>
+                                            </div>
+                                            <span class="badge bg-success">Processed</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-file-word text-primary me-3"></i>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-1">cv_template.docx</h6>
+                                                <small class="text-muted">Uploaded 1 week ago</small>
+                                            </div>
+                                            <span class="badge bg-warning">Processing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // File upload functionality
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const filePreview = document.getElementById('filePreview');
+        const uploadProgress = document.getElementById('uploadProgress');
+        const uploadSuccess = document.getElementById('uploadSuccess');
+        const analysisCard = document.getElementById('analysisCard');
+
+        // Drag and drop functionality
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('drag-over');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            // Validate file type
+            const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/plain'];
+            if (!allowedTypes.includes(file.type)) {
+                alert('Please upload a PDF, DOC, DOCX, or TXT file.');
+                return;
+            }
+
+            // Validate file size (10MB)
+            if (file.size > 10 * 1024 * 1024) {
+                alert('File size must be less than 10MB.');
+                return;
+            }
+
+            // Show file preview
+            document.getElementById('fileName').textContent = file.name;
+            document.getElementById('fileSize').textContent = formatFileSize(file.size);
+            uploadArea.classList.add('d-none');
+            filePreview.classList.remove('d-none');
+
+            // Simulate upload process
+            setTimeout(() => {
+                filePreview.classList.add('d-none');
+                uploadProgress.classList.remove('d-none');
+                
+                // Simulate progress
+                const progressBar = document.getElementById('progressBar');
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 10;
+                    progressBar.style.width = progress + '%';
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            uploadProgress.classList.add('d-none');
+                            uploadSuccess.classList.remove('d-none');
+                            analysisCard.classList.remove('d-none');
+                        }, 500);
+                    }
+                }, 200);
+            }, 1000);
+        }
+
+        function removeFile() {
+            filePreview.classList.add('d-none');
+            uploadArea.classList.remove('d-none');
+            uploadSuccess.classList.add('d-none');
+            analysisCard.classList.add('d-none');
+            fileInput.value = '';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function proceedToATS() {
+            window.location.href = 'ats-matcher.html';
+        }
+    </script>
+</body>
+</html>
