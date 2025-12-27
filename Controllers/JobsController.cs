@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using HireZ.Services;
 using HireZ.DTOs;
 using Microsoft.AspNetCore.Authorization;
@@ -11,13 +11,10 @@ namespace HireZ.Controllers
     public class JobsController : ControllerBase
     {
         private readonly IJobService _jobService;
-        public JobsController(IJobService jobService)
-        {
-            _jobService = jobService;
-        }
+        public JobsController(IJobService jobService) { _jobService = jobService; }
 
         [HttpPost]
-        [Authorize] // enforce JWT; add Roles parameter later if desired
+        [Authorize]
         public async Task<IActionResult> Create([FromBody] CreateJobRequest request)
         {
             var result = await _jobService.CreateJobAsync(request);
@@ -33,9 +30,6 @@ namespace HireZ.Controllers
             return Ok(job);
         }
 
-        /// <summary>
-        /// Match a resume to a job and return ATS result.
-        /// </summary>
         [HttpPost("{jobId}/match/{resumeId}")]
         [Authorize]
         public async Task<IActionResult> MatchResumeToJob(int jobId, int resumeId)

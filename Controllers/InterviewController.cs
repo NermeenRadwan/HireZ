@@ -22,7 +22,6 @@ namespace HireZ.Controllers
         public async Task<IActionResult> CreateSession([FromBody] CreateInterviewSessionRequest req)
         {
             if (req == null || req.ResumeId <= 0) return BadRequest("ResumeId is required.");
-
             var preferred = string.IsNullOrWhiteSpace(req.PreferredSource) ? "ai" : req.PreferredSource;
             var sessionId = await _interviewService.CreateInterviewSessionAndGenerateAsync(req.ResumeId, req.JobId, req.Count, preferred);
             return CreatedAtAction(nameof(GetSession), new { id = sessionId }, new { sessionId });
@@ -51,7 +50,6 @@ namespace HireZ.Controllers
                     CreatedAt = q.CreatedAt
                 }).ToList()
             };
-
             return Ok(dto);
         }
     }

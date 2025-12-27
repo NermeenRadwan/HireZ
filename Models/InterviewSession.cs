@@ -10,15 +10,12 @@ namespace HireZ.Models
         [Key]
         public int Id { get; set; }
 
-        // FK to Resume - make sure this is same type as Resume.Id (int)
         [Required]
         public int ResumeId { get; set; }
 
-        // Navigation property - ensure EF sees this
         [ForeignKey(nameof(ResumeId))]
         public virtual Resume? Resume { get; set; }
 
-        // Optional job reference
         public int? JobId { get; set; }
 
         [Required]

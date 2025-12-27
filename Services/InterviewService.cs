@@ -12,14 +12,15 @@ namespace HireZ.Services
     public class InterviewService : IInterviewService
     {
         private readonly ApplicationDbContext _db;
-        private readonly IAiService _ai; // assumed interface
-        public InterviewService(ApplicationDbContext db, IAiService ai)
+        private readonly IAiClient _aiClient;
+
+        public InterviewService(ApplicationDbContext db, IAiClient aiClient)
         {
             _db = db;
-            _ai = ai;
+            _aiClient = aiClient;
         }
 
-        // Existing heuristic generator (kept as fallback)
+        // Heuristic fallback generator (kept)
         public Task<List<string>> GenerateInterviewQuestionsAsync(string resumeText, string? jobDescription = null, int count = 8)
         {
             var resumeKeywords = TextProcessing.ExtractKeywords(resumeText);
@@ -83,7 +84,9 @@ namespace HireZ.Services
             var resume = await _db.Resumes.Include(r => r.ResumeText).FirstOrDefaultAsync(r => r.Id == resumeId);
             if (resume == null) throw new InvalidOperationException("Resume not found");
 
-            string resumeText = resume.ResumeText?.Text ?? "";
+            // Ensure resumeText is a string
+            var resumeText = resume.ResumeText?.Text ?? resume.ResumeText?.ToString() ?? string.Empty;
+
             string? jobDescription = null;
             if (jobId.HasValue)
             {
@@ -101,7 +104,6 @@ namespace HireZ.Services
         /// </summary>
         public async Task<int> CreateInterviewSessionAndGenerateAsync(int resumeId, int? jobId, int count = 8, string preferredSource = "ai")
         {
-            // Create session
             var session = new Models.InterviewSession
             {
                 ResumeId = resumeId,
@@ -110,19 +112,19 @@ namespace HireZ.Services
                 CreatedAt = DateTime.UtcNow
             };
             _db.InterviewSessions.Add(session);
-            await _db.SaveChangesAsync(); // get session.Id
+            await _db.SaveChangesAsync();
 
-            List<(string QuestionText, string Category, string Source)> questionsResult = null;
+            List<(string QuestionText, string Category, string Source)> questionsResult = new();
 
-            if (preferredSource?.ToLowerInvariant() == "ai")
+            if (!string.IsNullOrWhiteSpace(preferredSource) && preferredSource.ToLowerInvariant() == "ai")
             {
                 try
                 {
-                    // Build prompt
                     var resume = await _db.Resumes.Include(r => r.ResumeText).FirstOrDefaultAsync(r => r.Id == resumeId);
                     if (resume == null) throw new InvalidOperationException("Resume not found");
 
-                    var resumeText = resume.ResumeText?.Text ?? "";
+                    var resumeText = resume.ResumeText?.Text ?? resume.ResumeText?.ToString() ?? string.Empty;
+
                     string? jobDescription = null;
                     if (jobId.HasValue)
                     {
@@ -131,33 +133,33 @@ namespace HireZ.Services
                     }
 
                     var prompt = AiPromptBuilder.BuildInterviewQuestionsPrompt(resumeText, jobDescription, count);
-                    var aiResponse = await _ai.GenerateAsync(prompt);
+                    var aiResponse = await _aiClient.GenerateAsync(prompt) ?? string.Empty;
 
-                    // Try parse JSON array response
-                    questionsResult = ParseAiQuestions(aiResponse, count);
-
-                    if (questionsResult == null || questionsResult.Count == 0)
+                    var parsed = ParseAiQuestions(aiResponse, count);
+                    if (parsed.Count > 0)
+                    {
+                        questionsResult = parsed;
+                    }
+                    else
                     {
                         // fallback to heuristic
                         var fallback = await GenerateInterviewQuestionsAsync(resumeText, jobDescription, count);
                         questionsResult = fallback.Select(q => (q, "mixed", "Heuristic")).ToList();
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
-                    // Log if you have logger; fallback to heuristic
-                    var fallback2 = await GenerateInterviewQuestionsAsync(resumeId, jobId, count);
-                    questionsResult = fallback2.Select(q => (q, "mixed", "Heuristic")).ToList();
+                    var fallback = await GenerateInterviewQuestionsAsync(resumeId, jobId, count);
+                    questionsResult = fallback.Select(q => (q, "mixed", "Heuristic")).ToList();
                 }
             }
             else
             {
-                // Direct heuristic
                 var fallback = await GenerateInterviewQuestionsAsync(resumeId, jobId, count);
                 questionsResult = fallback.Select(q => (q, "mixed", "Heuristic")).ToList();
             }
 
-            // Persist questions
+            // Persist top 'count' questions
             foreach (var q in questionsResult.Take(count))
             {
                 var iq = new Models.InterviewQuestion
@@ -186,14 +188,15 @@ namespace HireZ.Services
 
         private List<(string QuestionText, string Category, string Source)> ParseAiQuestions(string aiResponse, int limit)
         {
-            if (string.IsNullOrWhiteSpace(aiResponse)) return null;
+            var list = new List<(string QuestionText, string Category, string Source)>();
+
+            if (string.IsNullOrWhiteSpace(aiResponse)) return list;
 
             try
             {
-                // Expecting JSON array: [{ "question":"...", "category":"technical" }]
                 using var doc = JsonDocument.Parse(aiResponse);
-                if (doc.RootElement.ValueKind != JsonValueKind.Array) return null;
-                var list = new List<(string QuestionText, string Category, string Source)>();
+                if (doc.RootElement.ValueKind != JsonValueKind.Array) return list;
+
                 foreach (var el in doc.RootElement.EnumerateArray())
                 {
                     var q = el.TryGetProperty("question", out var qElem) ? qElem.GetString() ?? "" : "";
@@ -204,13 +207,14 @@ namespace HireZ.Services
                     }
                     if (list.Count >= limit) break;
                 }
-                return list;
             }
             catch
             {
-                // parsing failed
-                return null;
+                // parsing failed, return empty list as fallback caller will handle it
+                return new List<(string, string, string)>();
             }
+
+            return list;
         }
 
         private string? ExtractRepresentativeSentence(string text)

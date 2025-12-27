@@ -10,7 +10,7 @@ namespace HireZ.Data
         {
         }
 
-        // Core domain sets (keep these names consistent with your models)
+        // Existing / core sets
         public DbSet<User> Users { get; set; }
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<ResumeText> ResumeTexts { get; set; }
@@ -25,38 +25,25 @@ namespace HireZ.Data
         public DbSet<InterviewQuestion> InterviewQuestions { get; set; }
         public DbSet<InterviewAnswer> InterviewAnswers { get; set; }
 
-        // other DbSets remain...
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             // InterviewSession -> InterviewQuestion (1:n)
             modelBuilder.Entity<InterviewSession>()
-                .HasOne(s => s.Resume)
-                .WithMany(r => r.InterviewSessions)  // uses inverse property on Resume
-                .HasForeignKey(s => s.ResumeId)
+                .HasMany(s => s.Questions)
+                .WithOne(q => q.InterviewSession)
+                .HasForeignKey(q => q.InterviewSessionId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // InterviewSession -> Resume (many sessions per resume). Use WithMany() to avoid requiring inverse navigation property on Resume.
+            // InterviewSession -> Resume (explicit mapping)
             modelBuilder.Entity<InterviewSession>()
-                .HasOne<Resume>()
-                .WithMany() // do not require Resume.InterviewSessions
+                .HasOne(s => s.Resume)
+                .WithMany(r => r.InterviewSessions) // ensure Resume model has InterviewSessions collection; if not, use .WithMany()
                 .HasForeignKey(s => s.ResumeId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // MatchedKeyword minimal mapping (if needed)
-            modelBuilder.Entity<MatchedKeyword>()
-                .HasKey(mk => mk.Id);
-
-            // ResumeFeedback mapping (if needed)
-            modelBuilder.Entity<ResumeFeedback>()
-                .HasKey(rf => rf.Id);
-
-            // Ensure unique constraints / indexes you rely on are defined, e.g. unique email on User if desired:
-            // modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
-
-            // Additional configuration here as required...
+            // Additional model config can go here...
         }
     }
 }

@@ -13,10 +13,8 @@ namespace HireZ.Models
 
         public string? AnswerText { get; set; }
 
-        // optional numeric score (0-100)
         public int? Score { get; set; }
 
-        // optional AI feedback text
         public string? Feedback { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

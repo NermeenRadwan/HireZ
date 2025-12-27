@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HireZ.Models
@@ -15,9 +14,8 @@ namespace HireZ.Models
         [Required]
         public string Description { get; set; } = "";
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        // Optional: requirements as free text (or a normalized list in future)
         public string Requirements { get; set; } = "";
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

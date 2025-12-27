@@ -6,11 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace HireZ.Services
 {
-    /// <summary>
-    /// Adapter that tries to locate an existing IAiService implementation in DI at runtime
-    /// and invoke a method (GenerateAsync or similar) via reflection. If unsuccessful, returns null.
-    /// This allows the code to compile without depending on the concrete IAiService signature.
-    /// </summary>
     public class AiClientAdapter : IAiClient
     {
         private readonly IServiceProvider _provider;
@@ -22,72 +17,56 @@ namespace HireZ.Services
 
         public async Task<string?> GenerateAsync(string prompt)
         {
-            // Try to find an IAiService interface type in loaded assemblies
             var aiInterface = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(a =>
                 {
                     try { return a.GetTypes(); } catch { return Array.Empty<Type>(); }
                 })
-                .FirstOrDefault(t => t.IsInterface && (t.Name == "IAiService" || t.Name == "IGenieService" || t.Name == "IAiProvider"));
+                .FirstOrDefault(t => t.IsInterface && (t.Name == "IAiService"));
 
-            if (aiInterface == null)
-            {
-                // No IAiService interface found
-                return null;
-            }
+            if (aiInterface == null) return null;
 
-            // Resolve the implementation from DI
             var aiService = _provider.GetService(aiInterface);
             if (aiService == null) return null;
 
-            // Try common method names
-            var candidateMethodNames = new[] { "GenerateAsync", "Generate", "CallAsync", "CompleteAsync", "CreateAsync", "RunAsync" };
-
-            MethodInfo? method = null;
-            foreach (var name in candidateMethodNames)
-            {
-                method = aiService.GetType().GetMethod(name, new[] { typeof(string) });
-                if (method != null) break;
-            }
-
-            if (method == null)
-            {
-                // Try methods with additional parameters: (string prompt, object options) => skip for now
-                method = aiService.GetType().GetMethods().FirstOrDefault(m =>
-                    m.GetParameters().Length == 1 && m.GetParameters()[0].ParameterType == typeof(string));
-            }
+            // Try to find a method that accepts a single string and returns Task<string> or string
+            var method = aiService.GetType().GetMethods()
+                .FirstOrDefault(m =>
+                {
+                    var ps = m.GetParameters();
+                    return ps.Length == 1 && ps[0].ParameterType == typeof(string);
+                });
 
             if (method == null) return null;
 
-            // Invoke method and await Task<string> if returned
             try
             {
                 var result = method.Invoke(aiService, new object[] { prompt });
                 if (result == null) return null;
 
-                // If result is Task or Task<T>, await it
                 if (result is Task task)
                 {
                     await task.ConfigureAwait(false);
-
-                    // Try to get Result property for Task<T>
-                    var resultProp = task.GetType().GetProperty("Result");
-                    if (resultProp != null)
+                    var resProp = task.GetType().GetProperty("Result");
+                    if (resProp != null)
                     {
-                        var res = resultProp.GetValue(task);
-                        return res?.ToString();
+                        var val = resProp.GetValue(task);
+                        return val?.ToString();
                     }
-
                     return null;
                 }
 
-                // If method returned string directly
                 return result.ToString();
             }
             catch
             {
                 return null;
             }
+        }
+
+        public Task<string?> GenerateAsync(object prompt)
+        {
+            throw new NotImplementedException();
         }
     }
 }
