@@ -34,14 +34,13 @@ function initializeAuth() {
 
     // Password toggle functionality
     const togglePassword = document.getElementById('togglePassword');
-    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-
     if (togglePassword) {
         togglePassword.addEventListener('click', function () {
             togglePasswordVisibility('password', this);
         });
     }
 
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
     if (toggleConfirmPassword) {
         toggleConfirmPassword.addEventListener('click', function () {
             togglePasswordVisibility('confirmPassword', this);
@@ -65,46 +64,48 @@ async function handleLogin(e) {
 
     // Show loading state
     const submitBtn = e.target.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Signing In...';
-    submitBtn.disabled = true;
+    if (submitBtn) {
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Signing In...';
+        submitBtn.disabled = true;
 
-    try {
-        console.log(`Attempting login for: ${email}`);  // For debugging, as per DEBUG_LOGIN.md
+        try {
+            console.log(`Attempting login for: ${email}`);  // For debugging, as per DEBUG_LOGIN.md
 
-        const response = await fetch('/api/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
 
-        console.log(`API.auth.login response: ${response.status}`);  // Debugging
+            console.log(`API.auth.login response: ${response.status}`);  // Debugging
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Login failed');
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Login failed');
+            }
+
+            const data = await response.json();
+            if (!data.token) {
+                throw new Error('No token received from server');
+            }
+
+            // Store JWT token
+            localStorage.setItem('jwtToken', data.token);
+
+            showAlert('success', 'Login successful! Redirecting to dashboard...');
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1500);
+        } catch (error) {
+            console.error('Login error:', error);
+            showAlert('danger', error.message || 'An error occurred. Please try again.');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         }
-
-        const data = await response.json();
-        if (!data.token) {
-            throw new Error('No token received from server');
-        }
-
-        // Store JWT token
-        localStorage.setItem('jwtToken', data.token);
-
-        showAlert('success', 'Login successful! Redirecting to dashboard...');
-        setTimeout(() => {
-            window.location.href = 'dashboard.html';
-        }, 1500);
-    } catch (error) {
-        console.error('Login error:', error);
-        showAlert('danger', error.message || 'An error occurred. Please try again.');
-    } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
     }
 }
 
@@ -130,107 +131,140 @@ async function handleRegister(e) {
 
     // Loading state
     const submitBtn = e.target.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Creating Account...';
-    submitBtn.disabled = true;
+    if (submitBtn) {
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Creating Account...';
+        submitBtn.disabled = true;
 
-    try {
-        const response = await fetch('/api/auth/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),  // Add more fields if your form/DTO requires them (e.g., name)
-        });
+        try {
+            const response = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),  // Add more fields if your form/DTO requires them (e.g., name)
+            });
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Registration failed');
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Registration failed');
+            }
+
+            showAlert('success', 'Account created successfully! Redirecting to login...');
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 1500);
+        } catch (error) {
+            showAlert('danger', error.message || 'An error occurred. Please try again.');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         }
-
-        showAlert('success', 'Account created successfully! Redirecting to login...');
-        setTimeout(() => {
-            window.location.href = 'login.html';
-        }, 1500);
-    } catch (error) {
-        showAlert('danger', error.message || 'An error occurred. Please try again.');
-    } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
     }
 }
 
 // Toggle password visibility
 function togglePasswordVisibility(inputId, button) {
     const input = document.getElementById(inputId);
-    const icon = button.querySelector('i');
-
-    if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-    } else {
-        input.type = 'password';
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
+    if (input) {
+        const icon = button.querySelector('i');
+        if (icon) {
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
     }
 }
 
 // Dashboard functionality
-function initializeDashboard() {
+async function initializeDashboard() {
     // Initialize charts if Chart.js is available
     if (typeof Chart !== 'undefined') {
-        initializeCharts();
+        await loadDashboardData();
     }
 
     // Initialize candidate interactions
     initializeCandidateInteractions();
 }
 
-// Initialize dashboard charts
-function initializeCharts() {
+// Load real dashboard data from API and initialize charts
+async function loadDashboardData() {
+    try {
+        const applicationsData = await apiFetch('/api/analytics/applications', { method: 'GET' });
+        const interviewsData = await apiFetch('/api/analytics/interviews', { method: 'GET' });
+        const hiresData = await apiFetch('/api/analytics/hires', { method: 'GET' });
+
+        // Assuming API returns { labels: [...], data: [...] } for each
+        initializeCharts(
+            applicationsData.labels || ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            applicationsData.data || [0, 0, 0, 0, 0, 0],
+            interviewsData.data || [0, 0, 0, 0, 0, 0],
+            hiresData.data || [0, 0, 0, 0, 0, 0]
+        );
+    } catch (error) {
+        console.error('Error loading dashboard data:', error);
+        // Fallback to dummy data
+        initializeCharts(
+            ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            [12, 19, 3, 5, 2, 3],
+            [8, 15, 2, 4, 1, 2],
+            [3, 8, 1, 2, 1, 1]
+        );
+    }
+}
+
+// Initialize dashboard charts with provided data
+function initializeCharts(labels, applications, interviews, hires) {
     const pipelineChart = document.getElementById('pipelineChart');
     if (pipelineChart) {
         const ctx = pipelineChart.getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Applications',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderColor: '#007bff',
-                    backgroundColor: 'rgba(0, 123, 255, 0.1)',
-                    tension: 0.4
-                }, {
-                    label: 'Interviews',
-                    data: [8, 15, 2, 4, 1, 2],
-                    borderColor: '#28a745',
-                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
-                    tension: 0.4
-                }, {
-                    label: 'Hires',
-                    data: [3, 8, 1, 2, 1, 1],
-                    borderColor: '#ffc107',
-                    backgroundColor: 'rgba(255, 193, 7, 0.1)',
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    }
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Applications',
+                        data: applications,
+                        borderColor: '#007bff',
+                        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                        tension: 0.4
+                    }, {
+                        label: 'Interviews',
+                        data: interviews,
+                        borderColor: '#28a745',
+                        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                        tension: 0.4
+                    }, {
+                        label: 'Hires',
+                        data: hires,
+                        borderColor: '#ffc107',
+                        backgroundColor: 'rgba(255, 193, 7, 0.1)',
+                        tension: 0.4
+                    }]
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
 }
 
@@ -296,53 +330,85 @@ function handleFileSelect(e) {
     handleFiles(files);
 }
 
-// Handle files
-function handleFiles(files) {
+// Handle files with real API upload
+async function handleFiles(files) {
     if (files.length === 0) return;
 
     // Show upload progress
     const progressCard = document.getElementById('uploadProgress');
     if (progressCard) {
         progressCard.style.display = 'block';
-        simulateUploadProgress();
     }
 
-    // Process files
-    Array.from(files).forEach(file => {
-        console.log('Processing file:', file.name);
-        // Here you would typically upload the file to your server
-    });
-}
-
-// Simulate upload progress
-function simulateUploadProgress() {
     const progressBar = document.getElementById('progressBar');
     const progressText = document.getElementById('progressText');
     const progressPercent = document.getElementById('progressPercent');
 
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += Math.random() * 15;
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            progressText.textContent = 'Upload complete!';
-            setTimeout(() => {
-                document.getElementById('uploadProgress').style.display = 'none';
-                showAlert('success', 'Files uploaded successfully!');
-            }, 1000);
-        }
+    try {
+        for (const file of files) {
+            const formData = new FormData();
+            formData.append('file', file);
 
-        progressBar.style.width = progress + '%';
-        progressPercent.textContent = Math.round(progress) + '%';
-    }, 200);
+            // Simulate progress while uploading
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 80) progress = 80;  // Cap until real upload finishes
+                if (progressBar) progressBar.style.width = progress + '%';
+                if (progressPercent) progressPercent.textContent = Math.round(progress) + '%';
+            }, 200);
+
+            const response = await apiFetch('/api/resume/upload', {
+                method: 'POST',
+                body: formData,
+                headers: {}  // No Content-Type for FormData
+            });
+
+            clearInterval(interval);
+            progress = 100;
+            if (progressBar) progressBar.style.width = '100%';
+            if (progressPercent) progressPercent.textContent = '100%';
+            if (progressText) progressText.textContent = 'Upload complete!';
+
+            // Display parsed resume data
+            displayParsedResume(response);  // Assuming response is parsed data like { name: '...', skills: [...], etc. }
+
+            showAlert('success', `Resume ${file.name} uploaded and parsed successfully!`);
+        }
+    } catch (error) {
+        console.error('Upload error:', error);
+        showAlert('danger', 'Error uploading resume. Please try again.');
+    } finally {
+        setTimeout(() => {
+            if (progressCard) progressCard.style.display = 'none';
+        }, 2000);
+    }
+}
+
+// Display parsed resume data (add a container in HTML if needed, e.g., <div id="parsedResume"></div>)
+function displayParsedResume(data) {
+    const container = document.getElementById('parsedResume') || document.body;  // Fallback to body if no specific div
+    if (container) {
+        const resultDiv = document.createElement('div');
+        resultDiv.className = 'parsed-resume';
+        resultDiv.innerHTML = `
+            <h3>Parsed Resume Data</h3>
+            <p><strong>Name:</strong> ${data.name || 'N/A'}</p>
+            <p><strong>Email:</strong> ${data.email || 'N/A'}</p>
+            <p><strong>Skills:</strong> ${data.skills ? data.skills.join(', ') : 'N/A'}</p>
+            <p><strong>Experience:</strong> ${data.experience || 'N/A'}</p>
+            <!-- Add more fields based on your ParseResumeResponse DTO -->
+        `;
+        container.appendChild(resultDiv);
+    }
 }
 
 // Initialize upload methods
 function initializeUploadMethods() {
     // Single upload
     window.openSingleUpload = function () {
-        document.getElementById('fileInput').click();
+        const fileInput = document.getElementById('fileInput');
+        if (fileInput) fileInput.click();
     };
 
     // Bulk upload
@@ -409,7 +475,7 @@ function initializeFeedback() {
 }
 
 // Handle feedback submission
-function handleFeedback(e) {
+async function handleFeedback(e) {
     e.preventDefault();
 
     const formData = new FormData(e.target);
@@ -423,17 +489,25 @@ function handleFeedback(e) {
 
     // Show loading state
     const submitBtn = e.target.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
-    submitBtn.disabled = true;
+    if (submitBtn) {
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
+        submitBtn.disabled = true;
 
-    // Simulate API call
-    setTimeout(() => {
-        showAlert('success', 'Feedback submitted successfully!');
-        e.target.reset();
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }, 1500);
+        try {
+            await apiFetch('/api/feedback/submit', {
+                method: 'POST',
+                body: JSON.stringify({ rating, recommendation }),
+            });
+            showAlert('success', 'Feedback submitted successfully!');
+            e.target.reset();
+        } catch (error) {
+            showAlert('danger', 'Error submitting feedback.');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    }
 }
 
 // Initialize rating system
@@ -456,10 +530,14 @@ function initializeRatingSystem() {
 }
 
 // Profile functionality
-function initializeProfile() {
+async function initializeProfile() {
     const profileForm = document.getElementById('profileForm');
     const companyForm = document.getElementById('companyForm');
     const securityForm = document.getElementById('securityForm');
+
+    if (profileForm || companyForm || securityForm) {
+        await loadProfileData();
+    }
 
     if (profileForm) {
         profileForm.addEventListener('submit', handleProfileUpdate);
@@ -474,25 +552,85 @@ function initializeProfile() {
     }
 }
 
+// Load real profile data from API
+async function loadProfileData() {
+    try {
+        const profileData = await apiFetch('/api/user/profile', { method: 'GET' });
+
+        // Populate profile form (adjust IDs based on your HTML)
+        const firstNameInput = document.getElementById('firstName');
+        if (firstNameInput) firstNameInput.value = profileData.firstName || '';
+
+        const lastNameInput = document.getElementById('lastName');
+        if (lastNameInput) lastNameInput.value = profileData.lastName || '';
+
+        const emailInput = document.getElementById('email');
+        if (emailInput) emailInput.value = profileData.email || '';
+        // Add more fields as per UserProfileResponse DTO
+
+        // Populate company form if applicable
+        if (profileData.company) {
+            const companyNameInput = document.getElementById('companyName');
+            if (companyNameInput) companyNameInput.value = profileData.company.name || '';
+            // etc.
+        }
+    } catch (error) {
+        console.error('Error loading profile:', error);
+        showAlert('danger', 'Error loading profile data.');
+    }
+}
+
 // Handle profile update
-function handleProfileUpdate(e) {
+async function handleProfileUpdate(e) {
     e.preventDefault();
-    showAlert('success', 'Profile updated successfully!');
+
+    const formData = new FormData(e.target);
+    const data = {
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        // Add more fields
+    };
+
+    try {
+        await apiFetch('/api/user/update-profile', {
+            method: 'PUT',
+            body: JSON.stringify(data),
+        });
+        showAlert('success', 'Profile updated successfully!');
+    } catch (error) {
+        showAlert('danger', 'Error updating profile.');
+    }
 }
 
 // Handle company update
-function handleCompanyUpdate(e) {
+async function handleCompanyUpdate(e) {
     e.preventDefault();
-    showAlert('success', 'Company information updated successfully!');
+
+    const formData = new FormData(e.target);
+    const data = {
+        name: formData.get('companyName'),
+        // Add more fields
+    };
+
+    try {
+        await apiFetch('/api/user/update-company', {
+            method: 'PUT',
+            body: JSON.stringify(data),
+        });
+        showAlert('success', 'Company information updated successfully!');
+    } catch (error) {
+        showAlert('danger', 'Error updating company info.');
+    }
 }
 
 // Handle security update
-function handleSecurityUpdate(e) {
+async function handleSecurityUpdate(e) {
     e.preventDefault();
 
-    const currentPassword = document.getElementById('currentPassword').value;
-    const newPassword = document.getElementById('newPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+    const formData = new FormData(e.target);
+    const currentPassword = formData.get('currentPassword');
+    const newPassword = formData.get('newPassword');
+    const confirmPassword = formData.get('confirmPassword');
 
     if (!currentPassword || !newPassword || !confirmPassword) {
         showAlert('warning', 'Please fill in all password fields.');
@@ -504,8 +642,16 @@ function handleSecurityUpdate(e) {
         return;
     }
 
-    showAlert('success', 'Password updated successfully!');
-    e.target.reset();
+    try {
+        await apiFetch('/api/user/update-password', {
+            method: 'PUT',
+            body: JSON.stringify({ currentPassword, newPassword }),
+        });
+        showAlert('success', 'Password updated successfully!');
+        e.target.reset();
+    } catch (error) {
+        showAlert('danger', 'Error updating password.');
+    }
 }
 
 // Navigation functionality
@@ -536,7 +682,7 @@ function highlightActiveNavigation() {
     });
 }
 
-// Utility function for authorized API calls (use this for other features like upload, feedback, etc.)
+// Utility function for authorized API calls
 async function apiFetch(url, options = {}) {
     const token = localStorage.getItem('jwtToken');
     if (!token) {
@@ -545,32 +691,39 @@ async function apiFetch(url, options = {}) {
         return;
     }
 
-    options.headers = {
-        ...options.headers,
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',  // Adjust if needed, e.g., for file uploads use FormData
+    const headers = new Headers(options.headers || {});
+    headers.append('Authorization', `Bearer ${token}`);
+
+    if (!(options.body instanceof FormData)) {
+        headers.append('Content-Type', 'application/json');
+    }
+
+    const fetchOptions = {
+        ...options,
+        headers: headers,
     };
 
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(url, fetchOptions);
         if (!response.ok) {
             if (response.status === 401) {
                 localStorage.removeItem('jwtToken');
                 showAlert('danger', 'Session expired. Please log in again.');
                 window.location.href = 'login.html';
             }
-            throw new Error(`API error: ${response.status}`);
+            const errorData = await response.json();
+            throw new Error(errorData.message || `API error: ${response.status}`);
         }
         return await response.json();
     } catch (error) {
         console.error('API fetch error:', error);
-        showAlert('danger', 'An error occurred. Please try again.');
+        showAlert('danger', error.message || 'An error occurred. Please try again.');
+        throw error;
     }
 }
 
-// Global alert function (assuming it's defined elsewhere or add if missing)
+// Global alert function
 function showAlert(type, message) {
-    // Implement or use existing alert system, e.g., Bootstrap alert
     const alertContainer = document.querySelector('.alert-container') || document.body;
     const alert = document.createElement('div');
     alert.className = `alert alert-${type} alert-dismissible fade show`;
@@ -582,7 +735,7 @@ function showAlert(type, message) {
     setTimeout(() => alert.remove(), 5000);
 }
 
-// Add this if initializeAnimations is missing (from original code, assuming it's there but truncated)
+// Add this if initializeAnimations is missing
 function initializeAnimations() {
     // Add any animation initializations here if needed
 }
