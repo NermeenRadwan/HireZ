@@ -158,6 +158,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseDefaultFiles();  // serves wwwroot/index.html when requesting root
+app.UseStaticFiles();
+
+app.UseRouting();
 
 app.UseAuthentication(); // must come before UseAuthorization
 app.UseAuthorization();
